@@ -12,6 +12,9 @@
 
 @interface DRBShotTableViewCell : UITableViewCell
 
-@property(nonatomic, retain) UIImageView *imageView;
+@property(nonatomic, retain) UIImageView *shotImageView;
+@property(nonatomic, retain) UILabel *titleLabel;
+
+- (void)updateWithShot:(DRBShot *)inShot;
 
 @end

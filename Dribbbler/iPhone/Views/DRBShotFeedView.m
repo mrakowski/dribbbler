@@ -10,7 +10,7 @@
 
 #import "DRBShotTableViewCell.h"
 
-static CGFloat const DRBShotFeedViewTableRowHeightFloat = 100.0f;
+static CGFloat const DRBShotFeedViewTableRowHeightFloat = 160.0f;
 
 @implementation DRBShotFeedView
 
@@ -62,11 +62,11 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 100.0f;
 	DRBShotTableViewCell *tmpShotTableViewCell = (DRBShotTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	
     if (tmpShotTableViewCell == nil)
-	{
         tmpShotTableViewCell = [[[DRBShotTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
     
-    tmpShotTableViewCell.textLabel.text = @"hi";
+    DRBShot *tmpShot = [_shotArray objectAtIndex:indexPath.row];
+    
+    [tmpShotTableViewCell updateWithShot:tmpShot];
     
     return tmpShotTableViewCell;
 }

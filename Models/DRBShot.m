@@ -46,7 +46,7 @@
 
         tmpJsonKeyString = @"image_url";
         if ([inJSONDictionary objectForKey:tmpJsonKeyString] != [NSNull null])
-            self.teaserImageUrlString = [inJSONDictionary objectForKey:tmpJsonKeyString];
+            self.imageUrlString = [inJSONDictionary objectForKey:tmpJsonKeyString];
     }
     return self;
 }
