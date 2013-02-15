@@ -19,12 +19,17 @@
 {
     [super viewDidLoad];
 	
-    self.view.backgroundColor = [UIColor yellowColor];
+    _shotFeedView = [[DRBShotFeedView alloc] initWithFrame:CGRectMake(0,
+                                                                      0,
+                                                                      self.view.bounds.size.width,
+                                                                      self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height)];
+    [self.view addSubview:_shotFeedView];
+    [_shotFeedView release];
     
     [DRBAPIHandler getMainFeedwithSuccessBlock:^(NSArray *inResponseArray)
     {
         self.shotArray = inResponseArray;
-        NSLog(@"_shotArray: %@", _shotArray);
+        // MIKE TODO: show the data in _shotArray in _shotFeedView
     }
                                andFailureBlock:^(NSError *inError)
     {

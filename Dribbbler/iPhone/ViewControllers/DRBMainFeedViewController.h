@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DRBShotFeedView.h"
+
 @interface DRBMainFeedViewController : UIViewController
 
 @property(nonatomic, retain) NSArray *shotArray;
+@property(nonatomic, retain) DRBShotFeedView *shotFeedView;
 
 @end
