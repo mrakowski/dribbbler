@@ -15,7 +15,19 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
-        self.contentView.backgroundColor = [UIColor magentaColor];
+        //self.contentView.backgroundColor = [UIColor magentaColor];
+        
+        UIImageView *tmpImageView = [[UIImageView alloc] init];
+        tmpImageView.backgroundColor = [UIColor cyanColor];
+        tmpImageView.frame = CGRectMake(0.0f, 0.0f, self.contentView.bounds.size.width, self.contentView.bounds.size.height);
+        
+        tmpImageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
+        
+        [tmpImageView setContentMode: UIViewContentModeScaleAspectFit];
+        tmpImageView.clipsToBounds = YES;
+        tmpImageView.userInteractionEnabled = YES;
+        [self.contentView addSubview:tmpImageView];
+        [tmpImageView release];
     }
     return self;
 }
@@ -25,6 +37,13 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)updateWithShot:(DRBShot *)inShot
+{
+    
+    
+
 }
 
 @end

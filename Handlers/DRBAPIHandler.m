@@ -47,8 +47,6 @@ static NSString *const DRBAPIHandlerMainFeedUrlString = @"http://api.dribbble.co
                                        queue:[DRBAPIHandler sharedInstance].operationQueue
                            completionHandler:^(NSURLResponse *inResponse, NSData *inData, NSError *inError)
      {
-         NSLog(@"inError: %@", inError);
-         
          if (inError == nil)
          {
              NSDictionary *tmpJsonDictionary = [NSJSONSerialization JSONObjectWithData:inData options:NSJSONReadingAllowFragments error:nil];

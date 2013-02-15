@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DRBShot.h"
+
 @interface DRBShotTableViewCell : UITableViewCell
+
+@property(nonatomic, retain) UIImageView *imageView;
 
 @end

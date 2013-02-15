@@ -19,10 +19,10 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 100.0f;
     self = [super initWithFrame:frame];
     if (self)
     {
-        self.backgroundColor = [UIColor purpleColor];
+        self.shotArray = @[];
         
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height) style:UITableViewStylePlain];
-        [_tableView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin];
+        [_tableView setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin];
         [_tableView setRowHeight:DRBShotFeedViewTableRowHeightFloat];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_tableView setDataSource:self];
@@ -34,6 +34,15 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 100.0f;
     return self;
 }
 
+#pragma mark - Public methods
+
+- (void)updateTableViewWithShotArray:(NSArray *)inShotArray
+{
+    self.shotArray = inShotArray;
+    
+    [_tableView reloadData];
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -43,7 +52,7 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 100.0f;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return 1;
+	return [_shotArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -88,6 +97,8 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 100.0f;
 
 - (void)dealloc
 {
+    self.shotArray = nil;
+    
     [super dealloc];
 }
 

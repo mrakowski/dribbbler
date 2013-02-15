@@ -18,18 +18,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = NSLocalizedString(@"DRBLocalizableStringsEveryone", @"DRBLocalizableStringsEveryone");
 	
-    _shotFeedView = [[DRBShotFeedView alloc] initWithFrame:CGRectMake(0,
-                                                                      0,
-                                                                      self.view.bounds.size.width,
-                                                                      self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height)];
+    _shotFeedView = [[DRBShotFeedView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height)];
     [self.view addSubview:_shotFeedView];
     [_shotFeedView release];
     
     [DRBAPIHandler getMainFeedwithSuccessBlock:^(NSArray *inResponseArray)
     {
-        self.shotArray = inResponseArray;
-        // MIKE TODO: show the data in _shotArray in _shotFeedView
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [inResponseArray retain];
+            [_shotFeedView updateTableViewWithShotArray:inResponseArray];
+            [inResponseArray release];
+        });
     }
                                andFailureBlock:^(NSError *inError)
     {
@@ -55,9 +58,7 @@
 }
 
 - (void)dealloc
-{
-    self.shotArray = nil;
-    
+{   
     [super dealloc];
 }
 
