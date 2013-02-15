@@ -28,11 +28,17 @@
     }
                                andFailureBlock:^(NSError *inError)
     {
-        
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+           
+            UIAlertView *tmpAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"DRBLocalizableStringsAlertTitle", @"DRBLocalizableStringsAlertTitle")
+                                                                   message:@"There was a problem getting the main feed."
+                                                                  delegate:nil
+                                                         cancelButtonTitle:@"Close"
+                                                         otherButtonTitles:nil];
+            [tmpAlertView show];
+            [tmpAlertView release];
+        });
     }];
-    
-    
 }
 
 #pragma mark - Memory

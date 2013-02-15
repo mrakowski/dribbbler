@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81476CBA16CDC9370004D093 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81476CB816CDC9370004D093 /* Localizable.strings */; };
 		81CA534716CDBA730033795D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CA534616CDBA730033795D /* UIKit.framework */; };
 		81CA534916CDBA730033795D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CA534816CDBA730033795D /* Foundation.framework */; };
 		81CA534B16CDBA730033795D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CA534A16CDBA730033795D /* CoreGraphics.framework */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81476CB916CDC9370004D093 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		81CA534316CDBA730033795D /* Dribbbler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dribbbler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81CA534616CDBA730033795D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		81CA534816CDBA730033795D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -107,6 +109,7 @@
 				81CA535816CDBA730033795D /* Default.png */,
 				81CA535A16CDBA730033795D /* Default@2x.png */,
 				81CA535C16CDBA730033795D /* Default-568h@2x.png */,
+				81476CB816CDC9370004D093 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				81CA535916CDBA730033795D /* Default.png in Resources */,
 				81CA535B16CDBA730033795D /* Default@2x.png in Resources */,
 				81CA535D16CDBA730033795D /* Default-568h@2x.png in Resources */,
+				81476CBA16CDC9370004D093 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +227,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		81476CB816CDC9370004D093 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81476CB916CDC9370004D093 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		81CA534F16CDBA730033795D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
