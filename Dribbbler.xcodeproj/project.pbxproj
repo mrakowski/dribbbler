@@ -16,6 +16,7 @@
 		81CA535916CDBA730033795D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 81CA535816CDBA730033795D /* Default.png */; };
 		81CA535B16CDBA730033795D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81CA535A16CDBA730033795D /* Default@2x.png */; };
 		81CA535D16CDBA730033795D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81CA535C16CDBA730033795D /* Default-568h@2x.png */; };
+		81CA536716CDBCA10033795D /* DRBAPIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CA536616CDBCA10033795D /* DRBAPIHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		81CA535816CDBA730033795D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		81CA535A16CDBA730033795D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		81CA535C16CDBA730033795D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		81CA536516CDBCA10033795D /* DRBAPIHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DRBAPIHandler.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		81CA536616CDBCA10033795D /* DRBAPIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DRBAPIHandler.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 		81CA536316CDBBB40033795D /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
+				81CA536516CDBCA10033795D /* DRBAPIHandler.h */,
+				81CA536616CDBCA10033795D /* DRBAPIHandler.m */,
 			);
 			path = Handlers;
 			sourceTree = SOURCE_ROOT;
@@ -183,6 +188,7 @@
 			files = (
 				81CA535316CDBA730033795D /* main.m in Sources */,
 				81CA535716CDBA730033795D /* DRBAppDelegate.m in Sources */,
+				81CA536716CDBCA10033795D /* DRBAPIHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
