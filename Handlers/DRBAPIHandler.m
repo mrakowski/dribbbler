@@ -10,6 +10,8 @@
 
 static DRBAPIHandler *instance;
 
+static NSString *const DRBAPIHandlerMainFeedUrlString = @"http://api.dribbble.com/shots/everyone";
+
 @implementation DRBAPIHandler
 
 #pragma mark -
@@ -37,14 +39,17 @@ static DRBAPIHandler *instance;
 
 #pragma mark -
 
-+ (void)getMainFeedwithSuccessBlock:(void (^)(NSArray *inResponseArray))inSuccessBlock andFailureBlock:(void (^)(NSArray *inResponseArray))inFailureBlock
++ (void)getMainFeedwithSuccessBlock:(void (^)(NSArray *inResponseArray))inSuccessBlock andFailureBlock:(void (^)(NSError *inError))inFailureBlock
 {
-    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.dribbble.com/shots/everyone"] ]
+    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DRBAPIHandlerMainFeedUrlString] ]
                                        queue:[DRBAPIHandler sharedInstance].operationQueue
                            completionHandler:^(NSURLResponse *inResponse, NSData *inData, NSError *inError)
      {
          NSDictionary *tmpJsonDictionary = [NSJSONSerialization JSONObjectWithData:inData options:NSJSONReadingAllowFragments error:nil];
-         NSLog(@"tmpJsonDictionary: %@", tmpJsonDictionary);   
+         //NSLog(@"tmpJsonDictionary: %@", tmpJsonDictionary);
+         
+         NSArray *tmpShotsJsonArray = [tmpJsonDictionary objectForKey:@"shots"];
+         NSLog(@"tmpShotsJsonArray: %@", tmpShotsJsonArray);
      }];
 }
 
@@ -64,6 +69,5 @@ static DRBAPIHandler *instance;
 {
 	[super dealloc];
 }
-
 
 @end

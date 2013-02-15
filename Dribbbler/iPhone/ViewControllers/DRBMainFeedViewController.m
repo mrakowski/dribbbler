@@ -8,6 +8,8 @@
 
 #import "DRBMainFeedViewController.h"
 
+#import "DRBAPIHandler.h"
+
 @interface DRBMainFeedViewController ()
 @end
 
@@ -18,6 +20,20 @@
     [super viewDidLoad];
 	
     self.view.backgroundColor = [UIColor yellowColor];
+    
+    [DRBAPIHandler getMainFeedwithSuccessBlock:^(NSArray *inResponseArray)
+    {
+        
+       
+        
+    }
+                               andFailureBlock:^(NSError *inError)
+    {
+        
+        
+    }];
+    
+    
 }
 
 #pragma mark - Memory
