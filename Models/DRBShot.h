@@ -10,4 +10,10 @@
 
 @interface DRBShot : NSObject
 
+@property(nonatomic, retain) NSString *teaserImageUrlString;
+@property(nonatomic, retain) NSString *imageUrlString;
+
++ (DRBShot *)shotFromJSONDictionary:(NSDictionary *)inJSONDictionary;
++ (NSArray *)shotArrayFromJSONArray:(NSArray *)inJSONArray;
+
 @end

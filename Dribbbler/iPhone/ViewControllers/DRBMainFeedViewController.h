@@ -10,4 +10,6 @@
 
 @interface DRBMainFeedViewController : UIViewController
 
+@property(nonatomic, retain) NSArray *shotArray;
+
 @end

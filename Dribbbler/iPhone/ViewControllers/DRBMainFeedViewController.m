@@ -23,9 +23,8 @@
     
     [DRBAPIHandler getMainFeedwithSuccessBlock:^(NSArray *inResponseArray)
     {
-        
-       
-        
+        self.shotArray = inResponseArray;
+        NSLog(@"_shotArray: %@", _shotArray);
     }
                                andFailureBlock:^(NSError *inError)
     {
@@ -42,6 +41,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    self.shotArray = nil;
+    
+    [super dealloc];
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import "DRBAPIHandler.h"
 
+#import "DRBShot.h"
+
 static DRBAPIHandler *instance;
 
 static NSString *const DRBAPIHandlerMainFeedUrlString = @"http://api.dribbble.com/shots/everyone";
@@ -45,11 +47,22 @@ static NSString *const DRBAPIHandlerMainFeedUrlString = @"http://api.dribbble.co
                                        queue:[DRBAPIHandler sharedInstance].operationQueue
                            completionHandler:^(NSURLResponse *inResponse, NSData *inData, NSError *inError)
      {
-         NSDictionary *tmpJsonDictionary = [NSJSONSerialization JSONObjectWithData:inData options:NSJSONReadingAllowFragments error:nil];
-         //NSLog(@"tmpJsonDictionary: %@", tmpJsonDictionary);
-         
-         NSArray *tmpShotsJsonArray = [tmpJsonDictionary objectForKey:@"shots"];
-         NSLog(@"tmpShotsJsonArray: %@", tmpShotsJsonArray);
+         NSLog(@"inError: %@", inError);
+         if (inError == nil)
+         {
+             NSDictionary *tmpJsonDictionary = [NSJSONSerialization JSONObjectWithData:inData options:NSJSONReadingAllowFragments error:nil];
+
+             NSArray *tmpShotJsonArray = [tmpJsonDictionary objectForKey:@"shots"];
+             NSLog(@"tmpShotsJsonArray: %@", tmpShotJsonArray);
+             
+             NSArray *tmpShotArray = [DRBShot shotArrayFromJSONArray:tmpShotJsonArray];
+             
+             inSuccessBlock(tmpShotArray);
+         }
+         else
+         {
+             inFailureBlock(inError);
+         }
      }];
 }
 
