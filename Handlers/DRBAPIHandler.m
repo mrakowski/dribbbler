@@ -20,23 +20,29 @@ static NSString *const DRBAPIHandlerMainFeedUrlString = @"http://api.dribbble.co
 
 + (DRBAPIHandler *)sharedInstance
 {
-	if (!instance)
-    {
-		instance = [[DRBAPIHandler alloc] init];
-        instance.operationQueue = [[NSOperationQueue alloc] init];
+    @synchronized (self)
+	{
+        if (!instance)
+        {
+            instance = [[DRBAPIHandler alloc] init];
+            instance.operationQueue = [[NSOperationQueue alloc] init];
+        }
+        
+        return instance;
     }
-    
-	return instance;
 }
 
 + (void)destroyInstance
 {
-	if (instance)
+    @synchronized (self)
 	{
-        instance.operationQueue = nil;
-		[instance release];
-		instance = nil;
-	}
+        if (instance)
+        {
+            instance.operationQueue = nil;
+            [instance release];
+            instance = nil;
+        }
+    }
 }
 
 #pragma mark -
