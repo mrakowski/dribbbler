@@ -8,6 +8,8 @@
 
 #import "DRBAppDelegate.h"
 
+#import "DRBMainFeedViewController.h"
+
 @implementation DRBAppDelegate
 
 - (void)dealloc
@@ -19,9 +21,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
+        
+    DRBMainFeedViewController *tmpViewController  = [[DRBMainFeedViewController alloc] init];
+    UINavigationController *tmpNavigationController = [[UINavigationController alloc] initWithRootViewController:tmpViewController];
+    [self.window setRootViewController:tmpNavigationController];
+    [tmpViewController release];
+    [tmpNavigationController release];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
