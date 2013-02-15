@@ -17,6 +17,7 @@
 		81CA535B16CDBA730033795D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81CA535A16CDBA730033795D /* Default@2x.png */; };
 		81CA535D16CDBA730033795D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81CA535C16CDBA730033795D /* Default-568h@2x.png */; };
 		81CA536716CDBCA10033795D /* DRBAPIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CA536616CDBCA10033795D /* DRBAPIHandler.m */; };
+		81CA536C16CDBF050033795D /* DRBMainFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CA536B16CDBF050033795D /* DRBMainFeedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		81CA535C16CDBA730033795D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		81CA536516CDBCA10033795D /* DRBAPIHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DRBAPIHandler.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		81CA536616CDBCA10033795D /* DRBAPIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DRBAPIHandler.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		81CA536A16CDBF050033795D /* DRBMainFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBMainFeedViewController.h; sourceTree = "<group>"; };
+		81CA536B16CDBF050033795D /* DRBMainFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBMainFeedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,7 @@
 			children = (
 				81CA535516CDBA730033795D /* DRBAppDelegate.h */,
 				81CA535616CDBA730033795D /* DRBAppDelegate.m */,
+				81CA536816CDBEE50033795D /* iPhone */,
 				81CA534D16CDBA730033795D /* Supporting Files */,
 			);
 			path = Dribbbler;
@@ -118,6 +122,23 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		81CA536816CDBEE50033795D /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				81CA536916CDBEE50033795D /* ViewControllers */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
+		81CA536916CDBEE50033795D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				81CA536A16CDBF050033795D /* DRBMainFeedViewController.h */,
+				81CA536B16CDBF050033795D /* DRBMainFeedViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +210,7 @@
 				81CA535316CDBA730033795D /* main.m in Sources */,
 				81CA535716CDBA730033795D /* DRBAppDelegate.m in Sources */,
 				81CA536716CDBCA10033795D /* DRBAPIHandler.m in Sources */,
+				81CA536C16CDBF050033795D /* DRBMainFeedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
