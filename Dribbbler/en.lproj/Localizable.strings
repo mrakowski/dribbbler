@@ -7,3 +7,6 @@
 */
 
 "DRBLocalizableStringsAlertTitle" = "Dribbbler";
+
+"DRBLocalizableStringsProblemGettingMainFeed" = "There was a problem getting the main feed.";
+"DRBLocalizableStringsClose" = "Close";

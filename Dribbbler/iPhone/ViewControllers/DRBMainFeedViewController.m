@@ -31,9 +31,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
            
             UIAlertView *tmpAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"DRBLocalizableStringsAlertTitle", @"DRBLocalizableStringsAlertTitle")
-                                                                   message:@"There was a problem getting the main feed."
+                                                                   message:NSLocalizedString(@"DRBLocalizableStringsProblemGettingMainFeed", @"DRBLocalizableStringsProblemGettingMainFeed")
                                                                   delegate:nil
-                                                         cancelButtonTitle:@"Close"
+                                                         cancelButtonTitle:NSLocalizedString(@"DRBLocalizableStringsClose", @"DRBLocalizableStringsClose")
                                                          otherButtonTitles:nil];
             [tmpAlertView show];
             [tmpAlertView release];
