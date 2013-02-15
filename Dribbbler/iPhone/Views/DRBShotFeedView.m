@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 Michael Rakowski. All rights reserved.
 //
 
-#import "DRBFeedView.h"
+#import "DRBShotFeedView.h"
 
-@implementation DRBFeedView
+@implementation DRBShotFeedView
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self)
     {
-        // Initialization code
+        
     }
     return self;
 }

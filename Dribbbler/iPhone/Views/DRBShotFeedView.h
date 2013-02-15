@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DRBFeedView : UIView
+@interface DRBShotFeedView : UIView
 
 @end
