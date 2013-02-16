@@ -16,7 +16,7 @@ static NSString *const DRBAPIHandlerMainFeedUrlString = @"http://api.dribbble.co
 
 @implementation DRBAPIHandler
 
-#pragma mark -
+#pragma mark - Instance
 
 + (DRBAPIHandler *)sharedInstance
 {
@@ -45,7 +45,7 @@ static NSString *const DRBAPIHandlerMainFeedUrlString = @"http://api.dribbble.co
     }
 }
 
-#pragma mark -
+#pragma mark - API requests
 
 + (void)getMainFeedwithSuccessBlock:(void (^)(NSArray *inResponseArray))inSuccessBlock andFailureBlock:(void (^)(NSError *inError))inFailureBlock
 {
@@ -79,6 +79,10 @@ static NSString *const DRBAPIHandlerMainFeedUrlString = @"http://api.dribbble.co
          inSuccessBlock([UIImage imageWithData:inData]);
      }];
 }
+
+//curl http://api.dribbble.com/players/simplebits
+
+
 
 #pragma mark - Memory
 
