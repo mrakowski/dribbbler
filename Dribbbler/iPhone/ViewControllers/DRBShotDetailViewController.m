@@ -18,6 +18,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _playerInfoView = [[DRBPlayerInfoView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, DRBPlayerInfoViewHeightFloat)];
+    [self.view addSubview:_playerInfoView];
+    [_playerInfoView release];
 	
 }
 

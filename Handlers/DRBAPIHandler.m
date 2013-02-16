@@ -56,9 +56,7 @@ static NSString *const DRBAPIHandlerMainFeedUrlString = @"http://api.dribbble.co
          if (inError == nil)
          {
              NSDictionary *tmpJsonDictionary = [NSJSONSerialization JSONObjectWithData:inData options:NSJSONReadingAllowFragments error:nil];
-
              NSArray *tmpShotJsonArray = [tmpJsonDictionary objectForKey:@"shots"];
-             
              NSArray *tmpShotArray = [DRBShot shotArrayFromJSONArray:tmpShotJsonArray];
              
              inSuccessBlock(tmpShotArray);
@@ -79,10 +77,6 @@ static NSString *const DRBAPIHandlerMainFeedUrlString = @"http://api.dribbble.co
          inSuccessBlock([UIImage imageWithData:inData]);
      }];
 }
-
-//curl http://api.dribbble.com/players/simplebits
-
-
 
 #pragma mark - Memory
 

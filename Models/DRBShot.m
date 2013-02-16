@@ -47,6 +47,13 @@
         tmpJsonKeyString = @"image_url";
         if ([inJSONDictionary objectForKey:tmpJsonKeyString] != [NSNull null])
             self.imageUrlString = [inJSONDictionary objectForKey:tmpJsonKeyString];
+        
+        tmpJsonKeyString = @"player";
+        if ([inJSONDictionary objectForKey:tmpJsonKeyString] != [NSNull null])
+        {
+            NSDictionary *tmpPlayerJSONDictionary = [inJSONDictionary objectForKey:tmpJsonKeyString];
+            self.player = [[DRBPlayer alloc] initWithJSONDictionary:tmpPlayerJSONDictionary];
+        }
     }
     return self;
 }
@@ -66,6 +73,7 @@
 {
     self.teaserImageUrlString = nil;
     self.imageUrlString = nil;
+    self.player = nil;
     
     [super dealloc];
 }

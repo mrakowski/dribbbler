@@ -12,6 +12,7 @@
 		81476CC316CDCF890004D093 /* DRBShotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81476CC216CDCF890004D093 /* DRBShotTableViewCell.m */; };
 		818F55E516D0144900B265FF /* DRBShotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F55E416D0144900B265FF /* DRBShotDetailViewController.m */; };
 		818F55E816D0179800B265FF /* DRBPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F55E716D0179800B265FF /* DRBPlayer.m */; };
+		818F55EB16D019E000B265FF /* DRBPlayerInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F55EA16D019E000B265FF /* DRBPlayerInfoView.m */; };
 		81BE2CE816CDDE9A00D568D4 /* DRBCacheHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 81BE2CE716CDDE9A00D568D4 /* DRBCacheHandler.m */; };
 		81CA534716CDBA730033795D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CA534616CDBA730033795D /* UIKit.framework */; };
 		81CA534916CDBA730033795D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CA534816CDBA730033795D /* Foundation.framework */; };
@@ -37,6 +38,8 @@
 		818F55E416D0144900B265FF /* DRBShotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBShotDetailViewController.m; sourceTree = "<group>"; };
 		818F55E616D0179800B265FF /* DRBPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBPlayer.h; sourceTree = "<group>"; };
 		818F55E716D0179800B265FF /* DRBPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBPlayer.m; sourceTree = "<group>"; };
+		818F55E916D019E000B265FF /* DRBPlayerInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBPlayerInfoView.h; sourceTree = "<group>"; };
+		818F55EA16D019E000B265FF /* DRBPlayerInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBPlayerInfoView.m; sourceTree = "<group>"; };
 		81BE2CE616CDDE9A00D568D4 /* DRBCacheHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBCacheHandler.h; sourceTree = "<group>"; };
 		81BE2CE716CDDE9A00D568D4 /* DRBCacheHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBCacheHandler.m; sourceTree = "<group>"; };
 		81CA534316CDBA730033795D /* Dribbbler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dribbbler.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +82,8 @@
 			children = (
 				81476CBC16CDCB5A0004D093 /* DRBShotFeedView.h */,
 				81476CBD16CDCB5A0004D093 /* DRBShotFeedView.m */,
+				818F55E916D019E000B265FF /* DRBPlayerInfoView.h */,
+				818F55EA16D019E000B265FF /* DRBPlayerInfoView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 				81BE2CE816CDDE9A00D568D4 /* DRBCacheHandler.m in Sources */,
 				818F55E516D0144900B265FF /* DRBShotDetailViewController.m in Sources */,
 				818F55E816D0179800B265FF /* DRBPlayer.m in Sources */,
+				818F55EB16D019E000B265FF /* DRBPlayerInfoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

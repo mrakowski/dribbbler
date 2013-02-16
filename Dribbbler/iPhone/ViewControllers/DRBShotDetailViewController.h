@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DRBPlayerInfoView.h"
+
 @interface DRBShotDetailViewController : UIViewController
+{
+    DRBPlayerInfoView *_playerInfoView;
+}
 
 @end

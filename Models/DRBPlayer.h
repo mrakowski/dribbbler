@@ -12,4 +12,6 @@
 
 @property(nonatomic, retain) NSString *nameString;
 
+- (id)initWithJSONDictionary:(NSDictionary *)inJSONDictionary;
+
 @end

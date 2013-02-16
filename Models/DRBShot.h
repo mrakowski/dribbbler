@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#import "DRBPlayer.h"
+
 @interface DRBShot : NSObject
 
 @property(nonatomic, retain) NSString *teaserImageUrlString;
 @property(nonatomic, retain) NSString *imageUrlString;
+@property(nonatomic, retain) DRBPlayer *player;
 
 + (DRBShot *)shotFromJSONDictionary:(NSDictionary *)inJSONDictionary;
 + (NSArray *)shotArrayFromJSONArray:(NSArray *)inJSONArray;
