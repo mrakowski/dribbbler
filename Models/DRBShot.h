@@ -12,6 +12,7 @@
 
 @interface DRBShot : NSObject
 
+@property(nonatomic, retain) NSString *idString;
 @property(nonatomic, retain) NSString *teaserImageUrlString;
 @property(nonatomic, retain) NSString *imageUrlString;
 @property(nonatomic, retain) DRBPlayer *player;

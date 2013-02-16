@@ -39,6 +39,10 @@
     if (self = [super init])
 	{
         NSString *tmpJsonKeyString = @"";
+
+        tmpJsonKeyString = @"id";
+        if ([inJSONDictionary objectForKey:tmpJsonKeyString] != [NSNull null])
+            self.idString = [inJSONDictionary objectForKey:tmpJsonKeyString];
         
         tmpJsonKeyString = @"image_teaser_url";
         if ([inJSONDictionary objectForKey:tmpJsonKeyString] != [NSNull null])
@@ -71,6 +75,7 @@
 
 - (void)dealloc
 {
+    self.idString = nil;
     self.teaserImageUrlString = nil;
     self.imageUrlString = nil;
     self.player = nil;

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "DRBPlayer.h"
+#import "DRBShot.h"
 
 @interface DRBAPIHandler : NSObject
 
@@ -20,5 +21,6 @@
 + (void)getMainFeedwithSuccessBlock:(void (^)(NSArray *inResponseArray))inSuccessBlock andFailureBlock:(void (^)(NSError *inError))inFailureBlock;
 + (void)loadImageWithUrlString:(NSString *)inUrlString withSuccessBlock:(void (^)(UIImage *inImage))inSuccessBlock andFailureBlock:(void (^)(NSArray *inResponseArray))inFailureBlock;
 + (void)getShotsForPlayer:(DRBPlayer *)inPlayer withSuccessBlock:(void (^)(NSArray *inShotArray))inSuccessBlock andFailureBlock:(void (^)(NSError *inError))inFailureBlock;
++ (void)getInfoForShot:(DRBShot *)inShot withSuccessBlock:(void (^)(NSArray *inShotArray))inSuccessBlock andFailureBlock:(void (^)(NSError *inError))inFailureBlock;
 
 @end
