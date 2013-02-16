@@ -78,6 +78,29 @@ static NSString *const DRBAPIHandlerMainFeedUrlString = @"http://api.dribbble.co
      }];
 }
 
++ (void)getShotsForPlayer:(DRBPlayer *)inPlayer withSuccessBlock:(void (^)(NSArray *inShotArray))inSuccessBlock andFailureBlock:(void (^)(NSError *inError))inFailureBlock
+{    
+    NSString *tmpShotsUrlString = [NSString stringWithFormat:@"http://api.dribbble.com/players/%@/shots", inPlayer.userNameString];
+    
+    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:tmpShotsUrlString]]
+                                       queue:[DRBAPIHandler sharedInstance].operationQueue
+                           completionHandler:^(NSURLResponse *inResponse, NSData *inData, NSError *inError)
+     {
+         if (inError == nil)
+         {
+             NSDictionary *tmpJsonDictionary = [NSJSONSerialization JSONObjectWithData:inData options:NSJSONReadingAllowFragments error:nil];
+             NSArray *tmpShotJsonArray = [tmpJsonDictionary objectForKey:@"shots"];
+             NSArray *tmpShotArray = [DRBShot shotArrayFromJSONArray:tmpShotJsonArray];
+             
+             inSuccessBlock(tmpShotArray);
+         }
+         else
+         {
+             inFailureBlock(inError);
+         }
+     }];
+}
+
 #pragma mark - Memory
 
 - (void)dealloc

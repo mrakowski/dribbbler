@@ -11,6 +11,7 @@
 @interface DRBPlayer : NSObject
 
 @property(nonatomic, retain) NSString *nameString;
+@property(nonatomic, retain) NSString *userNameString;
 @property(nonatomic, retain) NSString *avatarUrlString;
 
 - (id)initWithJSONDictionary:(NSDictionary *)inJSONDictionary;

@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 
 #import "DRBPlayerInfoView.h"
+#import "DRBShotFeedView.h"
 
 @interface DRBShotDetailViewController : UIViewController
 {
     DRBPlayerInfoView *_playerInfoView;
+    DRBShotFeedView *_shotFeedView;
 }
 
 @property(nonatomic, retain) DRBPlayer *player;

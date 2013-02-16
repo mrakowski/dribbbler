@@ -97,12 +97,20 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
+		818F55EC16D02A0E00B265FF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		81CA533A16CDBA730033795D = {
 			isa = PBXGroup;
 			children = (
 				81CA534C16CDBA730033795D /* Dribbbler */,
 				81CA536316CDBBB40033795D /* Handlers */,
 				81CA536416CDBBC80033795D /* Models */,
+				818F55EC16D02A0E00B265FF /* Categories */,
 				81CA534516CDBA730033795D /* Frameworks */,
 				81CA534416CDBA730033795D /* Products */,
 			);

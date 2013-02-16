@@ -22,6 +22,10 @@
         if ([inJSONDictionary objectForKey:tmpJsonKeyString] != [NSNull null])
             self.nameString = [inJSONDictionary objectForKey:tmpJsonKeyString];
         
+        tmpJsonKeyString = @"username";
+        if ([inJSONDictionary objectForKey:tmpJsonKeyString] != [NSNull null])
+            self.userNameString = [inJSONDictionary objectForKey:tmpJsonKeyString];
+        
         tmpJsonKeyString = @"avatar_url";
         if ([inJSONDictionary objectForKey:tmpJsonKeyString] != [NSNull null])
             self.avatarUrlString = [inJSONDictionary objectForKey:tmpJsonKeyString];
@@ -43,6 +47,7 @@
 - (void)dealloc
 {
     self.nameString = nil;
+    self.userNameString = nil;
     
     [super dealloc];
 }

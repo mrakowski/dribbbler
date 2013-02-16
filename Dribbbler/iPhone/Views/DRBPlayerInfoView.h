@@ -10,7 +10,7 @@
 
 #import "DRBPlayer.h"
 
-static CGFloat const DRBPlayerInfoViewHeightFloat = 164.0f;
+static CGFloat const DRBPlayerInfoViewHeightFloat = 104.0f;
 
 @interface DRBPlayerInfoView : UIView
 

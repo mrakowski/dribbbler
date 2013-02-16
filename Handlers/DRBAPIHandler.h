@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "DRBPlayer.h"
+
 @interface DRBAPIHandler : NSObject
 
 @property(nonatomic, retain) NSOperationQueue *operationQueue;
@@ -17,5 +19,6 @@
 
 + (void)getMainFeedwithSuccessBlock:(void (^)(NSArray *inResponseArray))inSuccessBlock andFailureBlock:(void (^)(NSError *inError))inFailureBlock;
 + (void)loadImageWithUrlString:(NSString *)inUrlString withSuccessBlock:(void (^)(UIImage *inImage))inSuccessBlock andFailureBlock:(void (^)(NSArray *inResponseArray))inFailureBlock;
++ (void)getShotsForPlayer:(DRBPlayer *)inPlayer withSuccessBlock:(void (^)(NSArray *inShotArray))inSuccessBlock andFailureBlock:(void (^)(NSError *inError))inFailureBlock;
 
 @end
