@@ -87,10 +87,10 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 160.0f;
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
-	if (indexPath.section == 0)
-	{
-
-	}
+    DRBShot *tmpShot = [_shotArray objectAtIndex:indexPath.row];
+    
+    if ([self.delegate respondsToSelector:@selector(shotFeedViewGotASelectionOfShot:)])
+        [self.delegate shotFeedViewGotASelectionOfShot:tmpShot];
 }
 
 #pragma mark - Memory

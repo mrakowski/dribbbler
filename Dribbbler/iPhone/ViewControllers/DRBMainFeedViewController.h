@@ -10,7 +10,7 @@
 
 #import "DRBShotFeedView.h"
 
-@interface DRBMainFeedViewController : UIViewController
+@interface DRBMainFeedViewController : UIViewController <DRBShotFeedViewDelegate>
 
 @property(nonatomic, retain) DRBShotFeedView *shotFeedView;
 

@@ -21,6 +21,8 @@ CGFloat const DRBShotTableViewCellBottomBorderHeight = 2.0f;
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         _shotImageView = [[UIImageView alloc] init];
         _shotImageView.frame = CGRectMake(0.0f, 0.0f, self.contentView.bounds.size.width, self.contentView.bounds.size.height - DRBShotTableViewCellBottomBorderHeight);
         _shotImageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;

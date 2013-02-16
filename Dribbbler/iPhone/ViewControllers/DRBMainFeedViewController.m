@@ -15,6 +15,8 @@
 
 @implementation DRBMainFeedViewController
 
+#pragma mark - View
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -22,6 +24,7 @@
     self.title = NSLocalizedString(@"DRBLocalizableStringsEveryone", @"DRBLocalizableStringsEveryone");
 	
     _shotFeedView = [[DRBShotFeedView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height)];
+    _shotFeedView.delegate = self;
     [self.view addSubview:_shotFeedView];
     [_shotFeedView release];
     
@@ -47,6 +50,15 @@
             [tmpAlertView release];
         });
     }];
+}
+
+#pragma mark -  DRBShotFeedViewDelegate
+
+- (void)shotFeedViewGotASelectionOfShot:(DRBShot *)inShot
+{
+    
+    
+
 }
 
 #pragma mark - Memory
