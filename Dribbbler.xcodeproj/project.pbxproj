@@ -10,6 +10,7 @@
 		81476CBA16CDC9370004D093 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81476CB816CDC9370004D093 /* Localizable.strings */; };
 		81476CBE16CDCB5A0004D093 /* DRBShotFeedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81476CBD16CDCB5A0004D093 /* DRBShotFeedView.m */; };
 		81476CC316CDCF890004D093 /* DRBShotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81476CC216CDCF890004D093 /* DRBShotTableViewCell.m */; };
+		818F55E516D0144900B265FF /* DRBShotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F55E416D0144900B265FF /* DRBShotDetailViewController.m */; };
 		81BE2CE816CDDE9A00D568D4 /* DRBCacheHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 81BE2CE716CDDE9A00D568D4 /* DRBCacheHandler.m */; };
 		81CA534716CDBA730033795D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CA534616CDBA730033795D /* UIKit.framework */; };
 		81CA534916CDBA730033795D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CA534816CDBA730033795D /* Foundation.framework */; };
@@ -31,6 +32,8 @@
 		81476CBD16CDCB5A0004D093 /* DRBShotFeedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBShotFeedView.m; sourceTree = "<group>"; };
 		81476CC116CDCF890004D093 /* DRBShotTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBShotTableViewCell.h; sourceTree = "<group>"; };
 		81476CC216CDCF890004D093 /* DRBShotTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBShotTableViewCell.m; sourceTree = "<group>"; };
+		818F55E316D0144900B265FF /* DRBShotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBShotDetailViewController.h; sourceTree = "<group>"; };
+		818F55E416D0144900B265FF /* DRBShotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBShotDetailViewController.m; sourceTree = "<group>"; };
 		81BE2CE616CDDE9A00D568D4 /* DRBCacheHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBCacheHandler.h; sourceTree = "<group>"; };
 		81BE2CE716CDDE9A00D568D4 /* DRBCacheHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBCacheHandler.m; sourceTree = "<group>"; };
 		81CA534316CDBA730033795D /* Dribbbler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dribbbler.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +179,8 @@
 			children = (
 				81CA536A16CDBF050033795D /* DRBMainFeedViewController.h */,
 				81CA536B16CDBF050033795D /* DRBMainFeedViewController.m */,
+				818F55E316D0144900B265FF /* DRBShotDetailViewController.h */,
+				818F55E416D0144900B265FF /* DRBShotDetailViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 				81476CBE16CDCB5A0004D093 /* DRBShotFeedView.m in Sources */,
 				81476CC316CDCF890004D093 /* DRBShotTableViewCell.m in Sources */,
 				81BE2CE816CDDE9A00D568D4 /* DRBCacheHandler.m in Sources */,
+				818F55E516D0144900B265FF /* DRBShotDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "DRBMainFeedViewController.h"
+#import "DRBShotDetailViewController.h"
 
 #import "DRBAPIHandler.h"
 
@@ -52,12 +53,14 @@
     }];
 }
 
-#pragma mark -  DRBShotFeedViewDelegate
+#pragma mark - DRBShotFeedViewDelegate
 
 - (void)shotFeedViewGotASelectionOfShot:(DRBShot *)inShot
 {
-    
-    
+    // Show the details for this shot
+    DRBShotDetailViewController *tmpShotDetailViewController = [[DRBShotDetailViewController alloc] init];
+    [self.navigationController pushViewController:tmpShotDetailViewController animated:YES];
+    [tmpShotDetailViewController release];
 
 }
 
