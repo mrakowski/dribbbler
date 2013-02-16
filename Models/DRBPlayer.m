@@ -21,6 +21,10 @@
         tmpJsonKeyString = @"name";
         if ([inJSONDictionary objectForKey:tmpJsonKeyString] != [NSNull null])
             self.nameString = [inJSONDictionary objectForKey:tmpJsonKeyString];
+        
+        tmpJsonKeyString = @"avatar_url";
+        if ([inJSONDictionary objectForKey:tmpJsonKeyString] != [NSNull null])
+            self.avatarUrlString = [inJSONDictionary objectForKey:tmpJsonKeyString];
     }
     return self;
 }

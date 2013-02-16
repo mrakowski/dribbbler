@@ -15,4 +15,8 @@
     DRBPlayerInfoView *_playerInfoView;
 }
 
+@property(nonatomic, retain) DRBPlayer *player;
+
+- (id)initWithPlayer:(DRBPlayer *)inPlayer;
+
 @end

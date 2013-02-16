@@ -58,7 +58,7 @@
 - (void)shotFeedViewGotASelectionOfShot:(DRBShot *)inShot
 {
     // Show the details for this shot
-    DRBShotDetailViewController *tmpShotDetailViewController = [[DRBShotDetailViewController alloc] init];
+    DRBShotDetailViewController *tmpShotDetailViewController = [[DRBShotDetailViewController alloc] initWithPlayer:inShot.player];
     [self.navigationController pushViewController:tmpShotDetailViewController animated:YES];
     [tmpShotDetailViewController release];
 
