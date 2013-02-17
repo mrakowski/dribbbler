@@ -8,17 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-#import "DRBPlayerInfoView.h"
-#import "DRBShotFeedView.h"
+#import "DRBShot.h"
 
 @interface DRBShotDetailViewController : UIViewController
 {
-    DRBPlayerInfoView *_playerInfoView;
-    DRBShotFeedView *_shotFeedView;
+
 }
 
-@property(nonatomic, retain) DRBPlayer *player;
+@property(nonatomic, retain) DRBShot *shot;
 
-- (id)initWithPlayer:(DRBPlayer *)inPlayer;
+- (id)initWithShot:(DRBShot *)inShot;
 
 @end
