@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DRBShot.h"
+
 @interface DRBShotDetailView : UIView
+
+@property(nonatomic, retain) DRBShot *shot;
+@property(nonatomic, retain) UIImageView *shotImageView;
+
+- (id)initWithFrame:(CGRect)frame andShot:(DRBShot *)inShot;
 
 @end

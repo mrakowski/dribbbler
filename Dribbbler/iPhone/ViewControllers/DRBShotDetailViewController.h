@@ -10,9 +10,11 @@
 
 #import "DRBShot.h"
 
+#import "DRBShotDetailView.h"
+
 @interface DRBShotDetailViewController : UIViewController
 {
-
+    DRBShotDetailView *_shotDetailView;
 }
 
 @property(nonatomic, retain) DRBShot *shot;

@@ -8,14 +8,62 @@
 
 #import "DRBShotDetailView.h"
 
+#import "DRBAPIHandler.h"
+
 @implementation DRBShotDetailView
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame andShot:(DRBShot *)inShot
 {
     self = [super initWithFrame:frame];
     if (self)
     {
-    
+        self.shot = inShot;
+        
+        _shotImageView = [[UIImageView alloc] init];
+        _shotImageView.frame = CGRectMake(0.0f, 0.0f, self.bounds.size.width, 220.0f);
+        [_shotImageView setContentMode: UIViewContentModeScaleAspectFill];
+        _shotImageView.clipsToBounds = YES;
+        _shotImageView.userInteractionEnabled = YES;
+        [self addSubview:_shotImageView];
+        [_shotImageView release];
+        
+        [DRBAPIHandler loadImageWithUrlString:_shot.imageUrlString withSuccessBlock:^(UIImage *inImage)
+         {
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 
+                 [self.shotImageView setImage:inImage];
+                 [self layoutSubviews];
+             });
+         }
+                              andFailureBlock:^(NSArray *inResponseArray)
+         {
+             
+         }];
+        
+        UILabel *tmpViewsLabel = [[[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(_shotImageView.frame), 200, 20)] autorelease];
+        tmpViewsLabel.text = [NSString stringWithFormat:@"Views: %@", _shot.viewsCountString];
+        [self addSubview:tmpViewsLabel];
+        
+        UILabel *tmpLikesLabel = [[[UILabel alloc] initWithFrame:CGRectMake(tmpViewsLabel.frame.origin.x, CGRectGetMaxY(tmpViewsLabel.frame), 300, tmpViewsLabel.frame.size.height)] autorelease];
+        tmpLikesLabel.text = [NSString stringWithFormat:@"Likes: %@", _shot.likesCountString];
+        [self addSubview:tmpLikesLabel];
+
+        UILabel *tmpCommentsLabel = [[[UILabel alloc] initWithFrame:CGRectMake(tmpViewsLabel.frame.origin.x, CGRectGetMaxY(tmpLikesLabel.frame), 300, tmpViewsLabel.frame.size.height)] autorelease];
+        tmpCommentsLabel.text = [NSString stringWithFormat:@"Comments: %@", _shot.commentsCountString];
+        [self addSubview:tmpCommentsLabel];
+        
+        UILabel *tmpArtistLabel = [[[UILabel alloc] initWithFrame:CGRectMake(tmpViewsLabel.frame.origin.x, CGRectGetMaxY(tmpCommentsLabel.frame), 300, tmpViewsLabel.frame.size.height)] autorelease];
+        tmpArtistLabel.text = @"Player:";
+        [self addSubview:tmpArtistLabel];
+        
+        UIButton *tmpButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        //[tmpButton setFrame:CGRectMake(CGRectGetMaxX(tmpArtistLabel.frame), tmpArtistLabel.frame.origin.y, 210, tmpViewsLabel.frame.size.height)];
+        [tmpButton setFrame:CGRectMake(0,333, 290, 40)];
+        [tmpButton setTitle:_shot.player.nameString forState:UIControlStateNormal];
+        tmpButton.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+        [tmpButton setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
+        //[tmpButton addTarget:self action:@selector(tappedPlayerButton) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:tmpButton];
     }
     return self;
 }

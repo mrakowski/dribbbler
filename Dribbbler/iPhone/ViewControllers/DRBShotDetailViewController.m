@@ -31,9 +31,11 @@
 {
     [super viewDidLoad];
     
-    // MIKE TODO: show a shot detail view with button to tap on the player name to go to DRBPlayerDetailViewController
+    self.title = _shot.titleString;
     
-    
+    _shotDetailView = [[DRBShotDetailView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 9) andShot:_shot];
+    [self.view addSubview:_shotDetailView];
+    [_shotDetailView release];
 }
 
 #pragma mark - Memory
