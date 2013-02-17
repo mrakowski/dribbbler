@@ -16,6 +16,9 @@
 @property(nonatomic, retain) NSString *teaserImageUrlString;
 @property(nonatomic, retain) NSString *imageUrlString;
 @property(nonatomic, retain) DRBPlayer *player;
+@property(nonatomic, retain) NSString *viewsCountString;
+@property(nonatomic, retain) NSString *likesCountString;
+@property(nonatomic, retain) NSString *commentsCountString;
 
 + (DRBShot *)shotFromJSONDictionary:(NSDictionary *)inJSONDictionary;
 + (NSArray *)shotArrayFromJSONArray:(NSArray *)inJSONArray;

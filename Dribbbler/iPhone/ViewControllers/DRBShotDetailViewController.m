@@ -30,6 +30,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // MIKE TODO: show a shot detail view with button to tap on the player name to go to DRBPlayerDetailViewController
+    
+    
 }
 
 #pragma mark - Memory

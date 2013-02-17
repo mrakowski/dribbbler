@@ -58,6 +58,18 @@
             NSDictionary *tmpPlayerJSONDictionary = [inJSONDictionary objectForKey:tmpJsonKeyString];
             self.player = [[DRBPlayer alloc] initWithJSONDictionary:tmpPlayerJSONDictionary];
         }
+        
+        tmpJsonKeyString = @"views_count";
+        if ([inJSONDictionary objectForKey:tmpJsonKeyString] != [NSNull null])
+            self.viewsCountString = [[inJSONDictionary objectForKey:tmpJsonKeyString] stringValue];
+
+        tmpJsonKeyString = @"likes_count";
+        if ([inJSONDictionary objectForKey:tmpJsonKeyString] != [NSNull null])
+            self.likesCountString = [[inJSONDictionary objectForKey:tmpJsonKeyString] stringValue];
+        
+        tmpJsonKeyString = @"comments_count";
+        if ([inJSONDictionary objectForKey:tmpJsonKeyString] != [NSNull null])
+            self.commentsCountString = [[inJSONDictionary objectForKey:tmpJsonKeyString] stringValue];
     }
     return self;
 }

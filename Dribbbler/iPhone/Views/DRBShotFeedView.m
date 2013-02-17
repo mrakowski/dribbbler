@@ -10,7 +10,7 @@
 
 #import "DRBShotTableViewCell.h"
 
-static CGFloat const DRBShotFeedViewTableRowHeightFloat = 160.0f;
+static CGFloat const DRBShotFeedViewTableRowHeightFloat = 140.0f;
 
 @implementation DRBShotFeedView
 
