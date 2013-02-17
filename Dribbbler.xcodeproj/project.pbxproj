@@ -26,6 +26,7 @@
 		81CA536716CDBCA10033795D /* DRBAPIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CA536616CDBCA10033795D /* DRBAPIHandler.m */; };
 		81CA536C16CDBF050033795D /* DRBMainFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CA536B16CDBF050033795D /* DRBMainFeedViewController.m */; };
 		81CA536F16CDC2D50033795D /* DRBShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CA536E16CDC2D50033795D /* DRBShot.m */; };
+		81F91A8716D1890F00136842 /* DRBPlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F91A8616D1890F00136842 /* DRBPlayerDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,8 @@
 		81CA536B16CDBF050033795D /* DRBMainFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBMainFeedViewController.m; sourceTree = "<group>"; };
 		81CA536D16CDC2D50033795D /* DRBShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBShot.h; sourceTree = "<group>"; };
 		81CA536E16CDC2D50033795D /* DRBShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBShot.m; sourceTree = "<group>"; };
+		81F91A8516D1890F00136842 /* DRBPlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBPlayerDetailViewController.h; sourceTree = "<group>"; };
+		81F91A8616D1890F00136842 /* DRBPlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBPlayerDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +202,8 @@
 				81CA536B16CDBF050033795D /* DRBMainFeedViewController.m */,
 				818F55E316D0144900B265FF /* DRBShotDetailViewController.h */,
 				818F55E416D0144900B265FF /* DRBShotDetailViewController.m */,
+				81F91A8516D1890F00136842 /* DRBPlayerDetailViewController.h */,
+				81F91A8616D1890F00136842 /* DRBPlayerDetailViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				818F55E516D0144900B265FF /* DRBShotDetailViewController.m in Sources */,
 				818F55E816D0179800B265FF /* DRBPlayer.m in Sources */,
 				818F55EB16D019E000B265FF /* DRBPlayerInfoView.m in Sources */,
+				81F91A8716D1890F00136842 /* DRBPlayerDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
