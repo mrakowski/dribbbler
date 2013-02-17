@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Michael Rakowski. All rights reserved.
 //
 
-#import "DRBPlayerInfoView.h"
+#import "DRBPlayerDetailView.h"
 
 #import "DRBAPIHandler.h"
 
-@implementation DRBPlayerInfoView
+@implementation DRBPlayerDetailView
 
 - (id)initWithFrame:(CGRect)frame andPlayer:(DRBPlayer *)inPlayer
 {

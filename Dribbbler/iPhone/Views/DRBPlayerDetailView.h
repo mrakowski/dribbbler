@@ -12,7 +12,7 @@
 
 static CGFloat const DRBPlayerInfoViewHeightFloat = 104.0f;
 
-@interface DRBPlayerInfoView : UIView
+@interface DRBPlayerDetailView : UIView
 
 @property(nonatomic, retain) DRBPlayer *player;
 @property(nonatomic, retain) UIImageView *avatarImageView;
