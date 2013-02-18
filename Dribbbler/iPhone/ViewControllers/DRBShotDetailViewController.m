@@ -7,6 +7,7 @@
 //
 
 #import "DRBShotDetailViewController.h"
+#import "DRBPlayerDetailViewController.h"
 
 @interface DRBShotDetailViewController ()
 @end
@@ -33,9 +34,19 @@
     
     self.title = _shot.titleString;
     
-    _shotDetailView = [[DRBShotDetailView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 9) andShot:_shot];
+    _shotDetailView = [[DRBShotDetailView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) andShot:_shot];
+    [_shotDetailView.playerButton addTarget:self action:@selector(tappedPlayerNameButton) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_shotDetailView];
     [_shotDetailView release];
+}
+
+#pragma mark - Control actions
+
+- (void)tappedPlayerNameButton
+{
+    DRBPlayerDetailViewController *tmpPlayerDetailViewController = [[DRBPlayerDetailViewController alloc] initWithPlayer:_shot.player];
+    [self.navigationController pushViewController:tmpPlayerDetailViewController animated:YES];
+    [tmpPlayerDetailViewController release];
 }
 
 #pragma mark - Memory
