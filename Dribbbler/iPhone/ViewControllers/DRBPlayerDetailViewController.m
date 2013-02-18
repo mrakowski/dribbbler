@@ -23,6 +23,8 @@
     if (self)
     {
         self.player = inPlayer;
+        
+        self.title = [inPlayer titleNameString];
     }
     return self;
 }

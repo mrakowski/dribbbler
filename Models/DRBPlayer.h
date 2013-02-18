@@ -16,4 +16,6 @@
 
 - (id)initWithJSONDictionary:(NSDictionary *)inJSONDictionary;
 
+- (NSString *)titleNameString;
+
 @end

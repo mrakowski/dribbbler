@@ -42,6 +42,24 @@
     return self;
 }
 
+#pragma mark - Public helper methods
+
+- (NSString *)titleNameString
+{
+    // Return the string to use in the title bar. Use the first name if possible.
+    
+    NSString *tmpTitleString = @"";
+    
+    if (_nameString != nil)
+    {
+        NSArray *tmpStringComponentsArray = [_nameString componentsSeparatedByString:@" "];
+        if ([tmpStringComponentsArray count] > 1)
+            tmpTitleString = [tmpStringComponentsArray objectAtIndex:0];
+    }
+    
+    return tmpTitleString;
+}
+
 #pragma mark - Memory
 
 - (void)dealloc
