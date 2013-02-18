@@ -10,6 +10,8 @@
 
 #import "DRBAPIHandler.h"
 
+#import "DRBCacheHandler.h"
+
 CGFloat const DRBShotTableViewCellBottomBorderHeight = 2.0f;
 
 @implementation DRBShotTableViewCell
@@ -46,22 +48,29 @@ CGFloat const DRBShotTableViewCellBottomBorderHeight = 2.0f;
 
 - (void)updateWithShot:(DRBShot *)inShot
 {
-    // MIKE TODO: store downloaded images in an NSCache
-    
     self.shotImageView.image = nil;
     
-    [DRBAPIHandler loadImageWithUrlString:inShot.imageUrlString withSuccessBlock:^(UIImage *inImage)
+    UIImage *tmpImage = [[DRBCacheHandler sharedCache] objectForKey:inShot.imageUrlString];
+    if (tmpImage == nil)
     {
-        dispatch_async(dispatch_get_main_queue(), ^{
-     
-            [self.shotImageView setImage:inImage];
-            [self layoutSubviews];
-        });
+        [DRBAPIHandler loadImageWithUrlString:inShot.imageUrlString withSuccessBlock:^(UIImage *inImage)
+         {
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 
+                 [self.shotImageView setImage:inImage];
+                 [self layoutSubviews];
+                 
+                 [[DRBCacheHandler sharedCache] setObject:inImage forKey:inShot.imageUrlString];
+             });
+         }
+                              andFailureBlock:^(NSArray *inResponseArray)
+         {
+         }];
     }
-                          andFailureBlock:^(NSArray *inResponseArray)
+    else
     {
-        
-    }];
+        [self.shotImageView setImage:tmpImage];
+    }
 }
 
 @end
