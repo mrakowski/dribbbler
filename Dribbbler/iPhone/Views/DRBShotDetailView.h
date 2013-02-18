@@ -14,6 +14,7 @@
 
 @property(nonatomic, retain) DRBShot *shot;
 @property(nonatomic, retain) UIImageView *shotImageView;
+@property(nonatomic, retain) UIButton *playerButton;
 
 - (id)initWithFrame:(CGRect)frame andShot:(DRBShot *)inShot;
 

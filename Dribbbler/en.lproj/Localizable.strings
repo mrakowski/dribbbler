@@ -11,3 +11,7 @@
 "DRBLocalizableStringsProblemGettingMainFeed" = "There was a problem getting the main feed.";
 "DRBLocalizableStringsClose" = "Close";
 "DRBLocalizableStringsEveryone" = "Everyone";
+
+"DRBLocalizableStringsViews" = "Views";
+"DRBLocalizableStringsLikes" = "Likes";
+"DRBLocalizableStringsComments" = "Comments";
