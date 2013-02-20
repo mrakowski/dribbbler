@@ -58,8 +58,6 @@ CGFloat const DRBShotTableViewCellBottomBorderHeight = 2.0f;
              dispatch_async(dispatch_get_main_queue(), ^{
                  
                  [self.shotImageView setImage:inImage];
-                 [self layoutSubviews];
-                 
                  [[DRBCacheHandler sharedCache] setObject:inImage forKey:inShot.imageUrlString];
              });
          }
