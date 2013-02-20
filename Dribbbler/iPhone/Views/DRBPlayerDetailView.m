@@ -45,6 +45,8 @@
         tmpPlayerNameLabel.backgroundColor = [UIColor clearColor];
         tmpPlayerNameLabel.font = [UIFont boldSystemFontOfSize:17];
         tmpPlayerNameLabel.text = inPlayer.nameString;
+        tmpPlayerNameLabel.shadowColor = [UIColor whiteColor];
+        tmpPlayerNameLabel.shadowOffset = CGSizeMake(0,1);
         [self addSubview:tmpPlayerNameLabel];
         [tmpPlayerNameLabel release];
         
@@ -52,6 +54,8 @@
         tmpPlayerLocationLabel.backgroundColor = [UIColor clearColor];
         tmpPlayerLocationLabel.font = tmpPlayerNameLabel.font;
         tmpPlayerLocationLabel.text = inPlayer.locationString;
+        tmpPlayerLocationLabel.shadowColor = tmpPlayerNameLabel.shadowColor;
+        tmpPlayerLocationLabel.shadowOffset = tmpPlayerNameLabel.shadowOffset;
         [self addSubview:tmpPlayerLocationLabel];
         [tmpPlayerLocationLabel release];
     }
