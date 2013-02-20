@@ -19,10 +19,12 @@
                                            queue:inOperationQueue
                                completionHandler:^(NSURLResponse *inResponse, NSData *inData, NSError *inError)
          {
+             UIImage *tmpImage = [UIImage imageWithData:inData];
+             [inCache setObject:tmpImage forKey:[inUrl absoluteString]];
+             
              dispatch_async(dispatch_get_main_queue(), ^
             {
-                self.image = [UIImage imageWithData:inData];
-                [inCache setObject:self.image forKey:[inUrl absoluteString]];
+                self.image = tmpImage;
             });
          }];
     }
