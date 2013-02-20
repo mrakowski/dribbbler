@@ -13,6 +13,7 @@
 @property(nonatomic, retain) NSString *nameString;
 @property(nonatomic, retain) NSString *userNameString;
 @property(nonatomic, retain) NSString *avatarUrlString;
+@property(nonatomic, retain) NSString *locationString;
 
 - (id)initWithJSONDictionary:(NSDictionary *)inJSONDictionary;
 
