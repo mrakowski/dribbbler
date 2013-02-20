@@ -9,8 +9,9 @@
 #import "DRBShotTableViewCell.h"
 
 #import "DRBAPIHandler.h"
-
 #import "DRBCacheHandler.h"
+
+#import "UIImageView+RemoteImage.h"
 
 CGFloat const DRBShotTableViewCellBottomBorderHeight = 2.0f;
 
@@ -48,27 +49,11 @@ CGFloat const DRBShotTableViewCellBottomBorderHeight = 2.0f;
 
 - (void)updateWithShot:(DRBShot *)inShot
 {
-    self.shotImageView.image = nil;
+    _shotImageView.image = nil;
     
-    UIImage *tmpImage = [[DRBCacheHandler sharedCache] objectForKey:inShot.imageUrlString];
-    if (tmpImage == nil)
-    {
-        [DRBAPIHandler loadImageWithUrlString:inShot.imageUrlString withSuccessBlock:^(UIImage *inImage)
-         {
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 
-                 [self.shotImageView setImage:inImage];
-                 [[DRBCacheHandler sharedCache] setObject:inImage forKey:inShot.imageUrlString];
-             });
-         }
-                              andFailureBlock:^(NSArray *inResponseArray)
-         {
-         }];
-    }
-    else
-    {
-        [self.shotImageView setImage:tmpImage];
-    }
+    [_shotImageView loadImageWithUrl:[NSURL URLWithString:inShot.imageUrlString]
+                   andOperationQueue:[DRBAPIHandler sharedInstance].operationQueue
+                         andUseCache:[DRBCacheHandler sharedCache]];
 }
 
 @end
