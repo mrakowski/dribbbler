@@ -32,22 +32,6 @@
         [self addSubview:_shotImageView];
         [_shotImageView release];
         
-        // MIKE TODO: check if this image is already in the cache
-        
-        /*
-        [DRBAPIHandler loadImageWithUrlString:_shot.imageUrlString withSuccessBlock:^(UIImage *inImage)
-         {
-             dispatch_async(dispatch_get_main_queue(), ^
-             {
-                 [self.shotImageView setImage:inImage];
-             });
-         }
-                              andFailureBlock:^(NSArray *inResponseArray)
-         {
-         }];
-         
-        */
-        
         CGFloat tmpVerticalMarginFloat = 10.0f;
         
         // View count label
