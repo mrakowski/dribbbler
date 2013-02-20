@@ -20,4 +20,9 @@
     return [UIColor colorWithRed:0.34f green:0.71f blue:0.95f alpha:1.00f];
 }
 
++ (UIColor *)feedTableViewBackgroundColor
+{
+    return [UIColor colorWithRed:0.96f green:0.96f blue:0.94f alpha:1.00f];
+}
+
 @end

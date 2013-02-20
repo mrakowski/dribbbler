@@ -10,6 +10,8 @@
 
 #import "DRBShotTableViewCell.h"
 
+#import "UIColor+Dribbbler.h"
+
 static CGFloat const DRBShotFeedViewTableRowHeightFloat = 140.0f;
 
 @implementation DRBShotFeedView
@@ -28,6 +30,7 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 140.0f;
         [_tableView setDataSource:self];
         [_tableView setDelegate:self];
         _tableView.separatorColor = [UIColor clearColor];
+        _tableView.backgroundColor = [UIColor feedTableViewBackgroundColor];
         [self addSubview:_tableView];
         [_tableView release];
     }

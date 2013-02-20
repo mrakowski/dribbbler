@@ -30,11 +30,10 @@
         [DRBAPIHandler loadImageWithUrlString:_player.avatarUrlString
                              withSuccessBlock:^(UIImage *inImage)
         {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
+            dispatch_async(dispatch_get_main_queue(), ^
+            {    
                 [_avatarImageView setImage:inImage];
             });
-            
         }
                               andFailureBlock:^(NSArray *inResponseArray)
         {
@@ -43,14 +42,12 @@
         CGFloat tmpHorizontalPadding = 10.0f;
         
         UILabel *tmpLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_avatarImageView.frame) + tmpHorizontalPadding, _avatarImageView.frame.origin.y, 220, 40)];
+        tmpLabel.backgroundColor = [UIColor clearColor];
         tmpLabel.text = inPlayer.nameString;
         [self addSubview:tmpLabel];
         [tmpLabel release];
-    
     }
     return self;
 }
-
-
 
 @end

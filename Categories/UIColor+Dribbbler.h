@@ -12,5 +12,6 @@
 
 + (UIColor *)navigationBarColor;
 + (UIColor *)playerButtonColor;
++ (UIColor *)feedTableViewBackgroundColor;
 
 @end
