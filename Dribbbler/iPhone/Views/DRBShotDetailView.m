@@ -31,10 +31,9 @@
         
         [DRBAPIHandler loadImageWithUrlString:_shot.imageUrlString withSuccessBlock:^(UIImage *inImage)
          {
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 
+             dispatch_async(dispatch_get_main_queue(), ^
+             {
                  [self.shotImageView setImage:inImage];
-                 [self layoutSubviews];
              });
          }
                               andFailureBlock:^(NSArray *inResponseArray)
