@@ -92,8 +92,8 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 140.0f;
 	
     DRBShot *tmpShot = [_shotArray objectAtIndex:indexPath.row];
     
-    if ([self.delegate respondsToSelector:@selector(shotFeedViewGotASelectionOfShot:)])
-        [self.delegate shotFeedViewGotASelectionOfShot:tmpShot];
+    if ([self.delegate respondsToSelector:@selector(shotFeedViewReceivedSelectionForShot:)])
+        [self.delegate shotFeedViewReceivedSelectionForShot:tmpShot];
 }
 
 #pragma mark - Memory

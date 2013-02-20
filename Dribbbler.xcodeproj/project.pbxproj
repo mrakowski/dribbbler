@@ -38,8 +38,8 @@
 		8140EDF716D2EEA9000E9E5E /* UIColor+Dribbbler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Dribbbler.h"; sourceTree = "<group>"; };
 		8140EDF816D2EEA9000E9E5E /* UIColor+Dribbbler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Dribbbler.m"; sourceTree = "<group>"; };
 		81476CB916CDC9370004D093 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		81476CBC16CDCB5A0004D093 /* DRBShotFeedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBShotFeedView.h; sourceTree = "<group>"; };
-		81476CBD16CDCB5A0004D093 /* DRBShotFeedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBShotFeedView.m; sourceTree = "<group>"; };
+		81476CBC16CDCB5A0004D093 /* DRBShotFeedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DRBShotFeedView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		81476CBD16CDCB5A0004D093 /* DRBShotFeedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DRBShotFeedView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		81476CC116CDCF890004D093 /* DRBShotTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBShotTableViewCell.h; sourceTree = "<group>"; };
 		81476CC216CDCF890004D093 /* DRBShotTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBShotTableViewCell.m; sourceTree = "<group>"; };
 		818301A416D471D300E858CD /* UIFont+Dribbbler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Dribbbler.h"; sourceTree = "<group>"; };
@@ -68,11 +68,11 @@
 		81CA536516CDBCA10033795D /* DRBAPIHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DRBAPIHandler.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		81CA536616CDBCA10033795D /* DRBAPIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DRBAPIHandler.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		81CA536A16CDBF050033795D /* DRBMainFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBMainFeedViewController.h; sourceTree = "<group>"; };
-		81CA536B16CDBF050033795D /* DRBMainFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBMainFeedViewController.m; sourceTree = "<group>"; };
+		81CA536B16CDBF050033795D /* DRBMainFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DRBMainFeedViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		81CA536D16CDC2D50033795D /* DRBShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBShot.h; sourceTree = "<group>"; };
 		81CA536E16CDC2D50033795D /* DRBShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBShot.m; sourceTree = "<group>"; };
 		81F91A8516D1890F00136842 /* DRBPlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBPlayerDetailViewController.h; sourceTree = "<group>"; };
-		81F91A8616D1890F00136842 /* DRBPlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBPlayerDetailViewController.m; sourceTree = "<group>"; };
+		81F91A8616D1890F00136842 /* DRBPlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DRBPlayerDetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

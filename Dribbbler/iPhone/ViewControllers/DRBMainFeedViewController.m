@@ -55,13 +55,12 @@
 
 #pragma mark - DRBShotFeedViewDelegate
 
-- (void)shotFeedViewGotASelectionOfShot:(DRBShot *)inShot
+- (void)shotFeedViewReceivedSelectionForShot:(DRBShot *)inShot
 {
     // Show the details for this shot
     DRBShotDetailViewController *tmpShotDetailViewController = [[DRBShotDetailViewController alloc] initWithShot:inShot];
     [self.navigationController pushViewController:tmpShotDetailViewController animated:YES];
     [tmpShotDetailViewController release];
-
 }
 
 #pragma mark - Memory

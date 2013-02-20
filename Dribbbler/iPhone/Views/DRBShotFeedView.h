@@ -24,5 +24,5 @@
 
 @protocol DRBShotFeedViewDelegate <NSObject>
 @optional
-- (void)shotFeedViewGotASelectionOfShot:(DRBShot *)inShot;
+- (void)shotFeedViewReceivedSelectionForShot:(DRBShot *)inShot;
 @end

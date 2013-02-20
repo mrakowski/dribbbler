@@ -7,6 +7,7 @@
 //
 
 #import "DRBPlayerDetailViewController.h"
+#import "DRBShotDetailViewController.h"
 
 #import "DRBAPIHandler.h"
 
@@ -40,6 +41,7 @@
                                                                       CGRectGetMaxY(_playerInfoView.frame),
                                                                       self.view.bounds.size.width,
                                                                       self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height - CGRectGetMaxY(_playerInfoView.frame))];
+    _shotFeedView.delegate = self;
     _shotFeedView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin;
     [self.view addSubview:_shotFeedView];
     [_shotFeedView release];
@@ -53,15 +55,23 @@
     [DRBAPIHandler getShotsForPlayer:_player
                     withSuccessBlock:^(NSArray *inShotArray)
      {
-         dispatch_async(dispatch_get_main_queue(), ^{
-             
+         dispatch_async(dispatch_get_main_queue(), ^
+         {    
              [_shotFeedView updateTableViewWithShotArray:inShotArray];
          });
      }
                      andFailureBlock:^(NSError *inError)
-     {
-         
+     {   
      }];
+}
+
+#pragma mark - DRBShotFeedViewDelegate
+
+- (void)shotFeedViewReceivedSelectionForShot:(DRBShot *)inShot
+{
+    DRBShotDetailViewController *tmpShotDetailViewController = [[DRBShotDetailViewController alloc] initWithShot:inShot];
+    [self.navigationController pushViewController:tmpShotDetailViewController animated:YES];
+    [tmpShotDetailViewController release];
 }
 
 #pragma mark - Memory

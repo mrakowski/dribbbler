@@ -11,7 +11,7 @@
 #import "DRBPlayerDetailView.h"
 #import "DRBShotFeedView.h"
 
-@interface DRBPlayerDetailViewController : UIViewController
+@interface DRBPlayerDetailViewController : UIViewController <DRBShotFeedViewDelegate>
 {
     DRBPlayerDetailView *_playerInfoView;
     DRBShotFeedView *_shotFeedView;
