@@ -22,7 +22,7 @@
         self.shot = inShot;
         
         _shotImageView = [[UIImageView alloc] init];
-        _shotImageView.frame = CGRectMake(0.0f, 0.0f, self.bounds.size.width, 220.0f);
+        _shotImageView.frame = CGRectMake(0.0f, 0.0f, self.bounds.size.width, 240.0f);
         [_shotImageView setContentMode: UIViewContentModeScaleAspectFill];
         _shotImageView.clipsToBounds = YES;
         _shotImageView.userInteractionEnabled = YES;

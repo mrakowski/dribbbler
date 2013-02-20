@@ -41,14 +41,16 @@
         
         CGFloat tmpHorizontalPadding = 10.0f;
         
-        UILabel *tmpPlayerNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_avatarImageView.frame) + tmpHorizontalPadding, _avatarImageView.frame.origin.y, 200, 20)];
+        UILabel *tmpPlayerNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_avatarImageView.frame) + tmpHorizontalPadding, _avatarImageView.frame.origin.y, 200, 22)];
         tmpPlayerNameLabel.backgroundColor = [UIColor clearColor];
+        tmpPlayerNameLabel.font = [UIFont boldSystemFontOfSize:17];
         tmpPlayerNameLabel.text = inPlayer.nameString;
         [self addSubview:tmpPlayerNameLabel];
         [tmpPlayerNameLabel release];
         
         UILabel *tmpPlayerLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(tmpPlayerNameLabel.frame.origin.x, CGRectGetMaxY(tmpPlayerNameLabel.frame), tmpPlayerNameLabel.bounds.size.width, tmpPlayerNameLabel.bounds.size.height)];
         tmpPlayerLocationLabel.backgroundColor = [UIColor clearColor];
+        tmpPlayerLocationLabel.font = tmpPlayerNameLabel.font;
         tmpPlayerLocationLabel.text = inPlayer.locationString;
         [self addSubview:tmpPlayerLocationLabel];
         [tmpPlayerLocationLabel release];
