@@ -10,13 +10,9 @@
 
 #import "DRBMainFeedViewController.h"
 
-@implementation DRBAppDelegate
+#import "UIColor+Dribbbler.h"
 
-- (void)dealloc
-{
-    [_window release];
-    [super dealloc];
-}
+@implementation DRBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -24,6 +20,7 @@
         
     DRBMainFeedViewController *tmpViewController  = [[DRBMainFeedViewController alloc] init];
     UINavigationController *tmpNavigationController = [[UINavigationController alloc] initWithRootViewController:tmpViewController];
+    tmpNavigationController.navigationBar.tintColor = [UIColor navigationBarColor];
     [self.window setRootViewController:tmpNavigationController];
     [tmpViewController release];
     [tmpNavigationController release];
@@ -59,6 +56,14 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Memory
+
+- (void)dealloc
+{
+    [_window release];
+    [super dealloc];
 }
 
 @end

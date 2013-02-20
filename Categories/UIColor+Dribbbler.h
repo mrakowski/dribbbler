@@ -10,6 +10,7 @@
 
 @interface UIColor (Dribbbler)
 
++ (UIColor *)navigationBarColor;
 + (UIColor *)playerButtonColor;
 
 @end
