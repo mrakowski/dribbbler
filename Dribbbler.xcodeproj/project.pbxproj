@@ -13,6 +13,8 @@
 		81476CBE16CDCB5A0004D093 /* DRBShotFeedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81476CBD16CDCB5A0004D093 /* DRBShotFeedView.m */; };
 		81476CC316CDCF890004D093 /* DRBShotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81476CC216CDCF890004D093 /* DRBShotTableViewCell.m */; };
 		818301A616D471D300E858CD /* UIFont+Dribbbler.m in Sources */ = {isa = PBXBuildFile; fileRef = 818301A516D471D300E858CD /* UIFont+Dribbbler.m */; };
+		818301AA16D4793000E858CD /* RRRRemoteImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 818301A916D4793000E858CD /* RRRRemoteImageView.m */; };
+		818301AD16D47DBC00E858CD /* UIImageView+RemoteImageWithCaching.m in Sources */ = {isa = PBXBuildFile; fileRef = 818301AC16D47DBC00E858CD /* UIImageView+RemoteImageWithCaching.m */; };
 		818F55E516D0144900B265FF /* DRBShotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F55E416D0144900B265FF /* DRBShotDetailViewController.m */; };
 		818F55E816D0179800B265FF /* DRBPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F55E716D0179800B265FF /* DRBPlayer.m */; };
 		818F55EB16D019E000B265FF /* DRBPlayerDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F55EA16D019E000B265FF /* DRBPlayerDetailView.m */; };
@@ -44,6 +46,10 @@
 		81476CC216CDCF890004D093 /* DRBShotTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBShotTableViewCell.m; sourceTree = "<group>"; };
 		818301A416D471D300E858CD /* UIFont+Dribbbler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Dribbbler.h"; sourceTree = "<group>"; };
 		818301A516D471D300E858CD /* UIFont+Dribbbler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Dribbbler.m"; sourceTree = "<group>"; };
+		818301A816D4793000E858CD /* RRRRemoteImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRRRemoteImageView.h; sourceTree = "<group>"; };
+		818301A916D4793000E858CD /* RRRRemoteImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRRRemoteImageView.m; sourceTree = "<group>"; };
+		818301AB16D47DBC00E858CD /* UIImageView+RemoteImageWithCaching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+RemoteImageWithCaching.h"; sourceTree = "<group>"; };
+		818301AC16D47DBC00E858CD /* UIImageView+RemoteImageWithCaching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+RemoteImageWithCaching.m"; sourceTree = "<group>"; };
 		818F55E316D0144900B265FF /* DRBShotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBShotDetailViewController.h; sourceTree = "<group>"; };
 		818F55E416D0144900B265FF /* DRBShotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBShotDetailViewController.m; sourceTree = "<group>"; };
 		818F55E616D0179800B265FF /* DRBPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBPlayer.h; sourceTree = "<group>"; };
@@ -111,6 +117,15 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
+		818301A716D478FD00E858CD /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				818301A816D4793000E858CD /* RRRRemoteImageView.h */,
+				818301A916D4793000E858CD /* RRRRemoteImageView.m */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
 		818F55EC16D02A0E00B265FF /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +133,8 @@
 				8140EDF816D2EEA9000E9E5E /* UIColor+Dribbbler.m */,
 				818301A416D471D300E858CD /* UIFont+Dribbbler.h */,
 				818301A516D471D300E858CD /* UIFont+Dribbbler.m */,
+				818301AB16D47DBC00E858CD /* UIImageView+RemoteImageWithCaching.h */,
+				818301AC16D47DBC00E858CD /* UIImageView+RemoteImageWithCaching.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -129,6 +146,7 @@
 				81CA536316CDBBB40033795D /* Handlers */,
 				81CA536416CDBBC80033795D /* Models */,
 				818F55EC16D02A0E00B265FF /* Categories */,
+				818301A716D478FD00E858CD /* Libraries */,
 				81CA534516CDBA730033795D /* Frameworks */,
 				81CA534416CDBA730033795D /* Products */,
 			);
@@ -305,6 +323,8 @@
 				8140EDF616D19087000E9E5E /* DRBShotDetailView.m in Sources */,
 				8140EDF916D2EEA9000E9E5E /* UIColor+Dribbbler.m in Sources */,
 				818301A616D471D300E858CD /* UIFont+Dribbbler.m in Sources */,
+				818301AA16D4793000E858CD /* RRRRemoteImageView.m in Sources */,
+				818301AD16D47DBC00E858CD /* UIImageView+RemoteImageWithCaching.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

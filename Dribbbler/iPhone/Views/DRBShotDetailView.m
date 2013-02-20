@@ -21,14 +21,18 @@
     {
         self.shot = inShot;
         
-        _shotImageView = [[UIImageView alloc] init];
+        _shotImageView = [[RRRRemoteImageView alloc] init];
         _shotImageView.frame = CGRectMake(0.0f, 0.0f, self.bounds.size.width, 240.0f);
         [_shotImageView setContentMode: UIViewContentModeScaleAspectFill];
         _shotImageView.clipsToBounds = YES;
         _shotImageView.userInteractionEnabled = YES;
+        [_shotImageView loadImageWithUrl:[NSURL URLWithString:_shot.imageUrlString] andOperationQueue:[DRBAPIHandler sharedInstance].operationQueue];
         [self addSubview:_shotImageView];
         [_shotImageView release];
         
+        // MIKE TODO: check if this image is already in the cache
+        
+        /*
         [DRBAPIHandler loadImageWithUrlString:_shot.imageUrlString withSuccessBlock:^(UIImage *inImage)
          {
              dispatch_async(dispatch_get_main_queue(), ^
@@ -38,8 +42,9 @@
          }
                               andFailureBlock:^(NSArray *inResponseArray)
          {
-             
          }];
+         
+        */
         
         CGFloat tmpVerticalMarginFloat = 10.0f;
         
