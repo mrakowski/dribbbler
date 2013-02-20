@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImageView (RemoteImageWithCaching)
+@interface UIImageView (RemoteImage)
+
+- (void)loadImageWithUrl:(NSURL *)inUrl andOperationQueue:(NSOperationQueue *)inOperationQueue andUseCache:(NSCache *)inCache;
 
 @end

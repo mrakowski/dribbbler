@@ -9,8 +9,10 @@
 #import "DRBShotDetailView.h"
 
 #import "DRBAPIHandler.h"
+#import "DRBCacheHandler.h"
 
 #import "UIColor+Dribbbler.h"
+#import "UIImageView+RemoteImage.h"
 
 @implementation DRBShotDetailView
 
@@ -21,12 +23,12 @@
     {
         self.shot = inShot;
         
-        _shotImageView = [[RRRRemoteImageView alloc] init];
+        _shotImageView = [[UIImageView alloc] init];
         _shotImageView.frame = CGRectMake(0.0f, 0.0f, self.bounds.size.width, 240.0f);
         [_shotImageView setContentMode: UIViewContentModeScaleAspectFill];
         _shotImageView.clipsToBounds = YES;
         _shotImageView.userInteractionEnabled = YES;
-        [_shotImageView loadImageWithUrl:[NSURL URLWithString:_shot.imageUrlString] andOperationQueue:[DRBAPIHandler sharedInstance].operationQueue];
+        [_shotImageView loadImageWithUrl:[NSURL URLWithString:_shot.imageUrlString] andOperationQueue:[DRBAPIHandler sharedInstance].operationQueue andUseCache:[DRBCacheHandler sharedCache]];
         [self addSubview:_shotImageView];
         [_shotImageView release];
         
