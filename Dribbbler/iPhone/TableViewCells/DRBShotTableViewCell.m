@@ -38,7 +38,7 @@ CGFloat const DRBShotTableViewCellBottomBorderHeight = 2.0f;
     return self;
 }
 
-#pragma mark - 
+#pragma mark - Selection
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
