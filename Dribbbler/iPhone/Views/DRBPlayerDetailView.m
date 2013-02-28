@@ -10,6 +10,8 @@
 
 #import "DRBAPIHandler.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @implementation DRBPlayerDetailView
 
 - (id)initWithFrame:(CGRect)frame andPlayer:(DRBPlayer *)inPlayer
@@ -22,8 +24,12 @@
         _avatarImageView = [[UIImageView alloc] init];
         _avatarImageView.frame = CGRectMake(10.0f, 10.0f, 90.0f, 90.0f);
         [_avatarImageView setContentMode: UIViewContentModeScaleAspectFill];
-        _avatarImageView.clipsToBounds = YES;
+        _avatarImageView.clipsToBounds = NO;
         _avatarImageView.userInteractionEnabled = YES;
+        _avatarImageView.layer.shadowColor = [UIColor blackColor].CGColor;
+        _avatarImageView.layer.shadowOffset = CGSizeMake(0, 1);
+        _avatarImageView.layer.shadowOpacity = 0.7f;
+        _avatarImageView.layer.shadowRadius = 1.0f;
         [self addSubview:_avatarImageView];
         [_avatarImageView release];
         
