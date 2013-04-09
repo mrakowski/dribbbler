@@ -14,7 +14,7 @@
 
 @implementation DRBPlayerDetailView
 
-- (id)initWithFrame:(CGRect)frame andPlayer:(DRBPlayer *)inPlayer
+- (id)initWithFrame:(CGRect)frame player:(DRBPlayer *)inPlayer
 {
     self = [super initWithFrame:frame];
     if (self)

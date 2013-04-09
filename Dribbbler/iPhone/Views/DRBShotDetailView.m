@@ -16,7 +16,7 @@
 
 @implementation DRBShotDetailView
 
-- (id)initWithFrame:(CGRect)frame andShot:(DRBShot *)inShot
+- (id)initWithFrame:(CGRect)frame shot:(DRBShot *)inShot
 {
     self = [super initWithFrame:frame];
     if (self)

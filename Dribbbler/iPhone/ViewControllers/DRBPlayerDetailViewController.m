@@ -48,7 +48,7 @@
     
     // Player info view
     _playerInfoView = [[DRBPlayerDetailView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, DRBPlayerInfoViewHeightFloat)
-                                                     andPlayer:_player];
+                                                          player:_player];
     _shotFeedView.tableView.tableHeaderView = _playerInfoView;
     [_playerInfoView release];
     
