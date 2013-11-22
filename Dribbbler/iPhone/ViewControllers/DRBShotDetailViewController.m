@@ -34,6 +34,8 @@
     
     [self setTitle:_shot.titleString];
     
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    
     // Show detail view
     _shotDetailView = [[DRBShotDetailView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) shot:_shot];
     [_shotDetailView.playerButton addTarget:self action:@selector(tappedPlayerNameButton) forControlEvents:UIControlEventTouchUpInside];
