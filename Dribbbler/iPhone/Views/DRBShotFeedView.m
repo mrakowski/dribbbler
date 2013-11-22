@@ -98,7 +98,4 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 140.0f;
         [self.delegate shotFeedViewReceivedSelectionForShot:tmpShot];
 }
 
-#pragma mark - Memory
-
-
 @end

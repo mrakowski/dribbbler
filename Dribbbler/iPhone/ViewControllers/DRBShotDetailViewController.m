@@ -21,7 +21,7 @@
     self = [super init];
     if (self)
     {
-        self.shot = inShot;
+        [self setShot:inShot];
     }
     return self;
 }
@@ -32,8 +32,9 @@
 {
     [super viewDidLoad];
     
-    self.title = _shot.titleString;
+    [self setTitle:_shot.titleString];
     
+    // Show detail view
     _shotDetailView = [[DRBShotDetailView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) shot:_shot];
     [_shotDetailView.playerButton addTarget:self action:@selector(tappedPlayerNameButton) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_shotDetailView];
@@ -43,17 +44,9 @@
 
 - (void)tappedPlayerNameButton
 {
+    // Push player detail view controller onto the stack
     DRBPlayerDetailViewController *tmpPlayerDetailViewController = [[DRBPlayerDetailViewController alloc] initWithPlayer:_shot.player];
     [self.navigationController pushViewController:tmpPlayerDetailViewController animated:YES];
-}
-
-#pragma mark - Memory
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

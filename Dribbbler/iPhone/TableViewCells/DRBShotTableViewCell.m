@@ -24,14 +24,15 @@ CGFloat const DRBShotTableViewCellBottomBorderHeight = 2.0f;
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         
+        // Shot image view
         _shotImageView = [[UIImageView alloc] init];
-        _shotImageView.frame = CGRectMake(0.0f, 0.0f, self.contentView.bounds.size.width, self.contentView.bounds.size.height - DRBShotTableViewCellBottomBorderHeight);
-        _shotImageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
+        [_shotImageView setFrame:CGRectMake(0.0f, 0.0f, self.contentView.bounds.size.width, self.contentView.bounds.size.height - DRBShotTableViewCellBottomBorderHeight)];
+        [_shotImageView setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth];
         [_shotImageView setContentMode: UIViewContentModeScaleAspectFill];
-        _shotImageView.clipsToBounds = YES;
-        _shotImageView.userInteractionEnabled = YES;
+        [_shotImageView setClipsToBounds:YES];
+        [_shotImageView setUserInteractionEnabled:YES];
         [self.contentView addSubview:_shotImageView];
     }
     return self;
@@ -48,8 +49,9 @@ CGFloat const DRBShotTableViewCellBottomBorderHeight = 2.0f;
 
 - (void)updateWithShot:(DRBShot *)inShot
 {
-    _shotImageView.image = nil;
+    [_shotImageView setImage:nil];
     
+    // Load image
     [_shotImageView loadImageWithUrl:[NSURL URLWithString:inShot.imageUrlString]
                    andOperationQueue:[DRBAPIHandler sharedInstance].operationQueue
                          andUseCache:[DRBCacheHandler sharedCache]];

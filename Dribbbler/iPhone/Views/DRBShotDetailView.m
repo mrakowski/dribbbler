@@ -23,11 +23,12 @@
     {
         self.shot = inShot;
         
+        // Shot image view
         _shotImageView = [[UIImageView alloc] init];
-        _shotImageView.frame = CGRectMake(0.0f, 0.0f, self.bounds.size.width, 240.0f);
+        [_shotImageView setFrame:CGRectMake(0.0f, 0.0f, self.bounds.size.width, 240.0f)];
         [_shotImageView setContentMode: UIViewContentModeScaleAspectFill];
-        _shotImageView.clipsToBounds = YES;
-        _shotImageView.userInteractionEnabled = YES;
+        [_shotImageView setClipsToBounds:YES];
+        [_shotImageView setUserInteractionEnabled:YES];
         [_shotImageView loadImageWithUrl:[NSURL URLWithString:_shot.imageUrlString] andOperationQueue:[DRBAPIHandler sharedInstance].operationQueue andUseCache:[DRBCacheHandler sharedCache]];
         [self addSubview:_shotImageView];
         
@@ -35,27 +36,29 @@
         
         // View count label
         UILabel *tmpViewsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(_shotImageView.frame) + tmpVerticalMarginFloat, 200, 20)];
-        tmpViewsLabel.text = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"DRBLocalizableStringsViews", @"DRBLocalizableStringsViews"), _shot.viewsCountString];
+        [tmpViewsLabel setText:[NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"DRBLocalizableStringsViews", @"DRBLocalizableStringsViews"), _shot.viewsCountString]];
         [self addSubview:tmpViewsLabel];
         
         // Likes count label
         UILabel *tmpLikesLabel = [[UILabel alloc] initWithFrame:CGRectMake(tmpViewsLabel.frame.origin.x, CGRectGetMaxY(tmpViewsLabel.frame), 300, tmpViewsLabel.frame.size.height)];
-        tmpLikesLabel.text = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"DRBLocalizableStringsLikes", @"DRBLocalizableStringsLikes"), _shot.likesCountString];
+        [tmpLikesLabel setText:[NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"DRBLocalizableStringsLikes", @"DRBLocalizableStringsLikes"), _shot.likesCountString]];
         [self addSubview:tmpLikesLabel];
 
         // Comments count label
         UILabel *tmpCommentsLabel = [[UILabel alloc] initWithFrame:CGRectMake(tmpViewsLabel.frame.origin.x, CGRectGetMaxY(tmpLikesLabel.frame), 300, tmpViewsLabel.frame.size.height)];
-        tmpCommentsLabel.text = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"DRBLocalizableStringsComments", @"DRBLocalizableStringsComments"), _shot.commentsCountString];
+        [tmpCommentsLabel setText:[NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"DRBLocalizableStringsComments", @"DRBLocalizableStringsComments"), _shot.commentsCountString]];
         [self addSubview:tmpCommentsLabel];
         
+        // Artist label
         UILabel *tmpArtistLabel = [[UILabel alloc] initWithFrame:CGRectMake(tmpViewsLabel.frame.origin.x, CGRectGetMaxY(tmpCommentsLabel.frame), 60, tmpViewsLabel.frame.size.height)];
-        tmpArtistLabel.text = @"Player:";
+        [tmpArtistLabel setText:@"Player:"];
         [self addSubview:tmpArtistLabel];
         
+        // Player button
         _playerButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_playerButton setFrame:CGRectMake(CGRectGetMaxX(tmpArtistLabel.frame), tmpArtistLabel.frame.origin.y, self.bounds.size.width - CGRectGetMaxX(tmpArtistLabel.frame), tmpArtistLabel.frame.size.height)];
         [_playerButton setTitle:_shot.player.nameString forState:UIControlStateNormal];
-        _playerButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+        [_playerButton.titleLabel setFont:[UIFont boldSystemFontOfSize:16]];
         [_playerButton setTitleColor:[UIColor playerButtonColor] forState:UIControlStateNormal];
         [_playerButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
         [self addSubview:_playerButton];

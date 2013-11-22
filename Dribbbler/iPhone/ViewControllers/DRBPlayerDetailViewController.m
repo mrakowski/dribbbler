@@ -23,9 +23,9 @@
     self = [super init];
     if (self)
     {
-        self.player = inPlayer;
+        [self setPlayer:inPlayer];
         
-        self.title = [inPlayer titleNameString];
+        [self setTitle:[inPlayer titleNameString]];
     }
     return self;
 }
@@ -41,15 +41,19 @@
                                                                       CGRectGetMaxY(_playerInfoView.frame),
                                                                       self.view.bounds.size.width,
                                                                       self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height - CGRectGetMaxY(_playerInfoView.frame))];
-    _shotFeedView.delegate = self;
-    _shotFeedView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin;
+    [_shotFeedView setDelegate:self];
+    [_shotFeedView setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin];
     [self.view addSubview:_shotFeedView];
     
     // Player info view
-    _playerInfoView = [[DRBPlayerDetailView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, DRBPlayerInfoViewHeightFloat)
+    _playerInfoView = [[DRBPlayerDetailView alloc] initWithFrame:CGRectMake(0,
+                                                                            0,
+                                                                            self.view.bounds.size.width,
+                                                                            DRBPlayerInfoViewHeightFloat)
                                                           player:_player];
     _shotFeedView.tableView.tableHeaderView = _playerInfoView;
     
+    // Get shots data for player
     [DRBAPIHandler getShotsForPlayer:_player
                     withSuccessBlock:^(NSArray *inShotArray)
      {
@@ -59,25 +63,16 @@
          });
      }
                      andFailureBlock:^(NSError *inError)
-     {   
-     }];
+     {}];
 }
 
 #pragma mark - DRBShotFeedViewDelegate
 
 - (void)shotFeedViewReceivedSelectionForShot:(DRBShot *)inShot
 {
+    // Push shot detail view controller onto the stack
     DRBShotDetailViewController *tmpShotDetailViewController = [[DRBShotDetailViewController alloc] initWithShot:inShot];
     [self.navigationController pushViewController:tmpShotDetailViewController animated:YES];
-}
-
-#pragma mark - Memory
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
