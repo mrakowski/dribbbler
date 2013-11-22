@@ -34,7 +34,6 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 140.0f;
         [_tableView setSeparatorColor:[UIColor clearColor]];
         [_tableView setBackgroundColor:[UIColor feedTableViewBackgroundColor]];
         [self addSubview:_tableView];
-        [_tableView release];
     }
     return self;
 }
@@ -67,7 +66,7 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 140.0f;
 	DRBShotTableViewCell *tmpShotTableViewCell = (DRBShotTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	
     if (tmpShotTableViewCell == nil)
-        tmpShotTableViewCell = [[[DRBShotTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        tmpShotTableViewCell = [[DRBShotTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     
     DRBShot *tmpShot = [_shotArray objectAtIndex:indexPath.row];
     
@@ -80,7 +79,7 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 140.0f;
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-	return [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+	return [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -101,11 +100,5 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 140.0f;
 
 #pragma mark - Memory
 
-- (void)dealloc
-{
-    [self setShotArray:nil];
-    
-    [super dealloc];
-}
 
 @end

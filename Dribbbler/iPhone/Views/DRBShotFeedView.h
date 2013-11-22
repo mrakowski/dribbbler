@@ -14,9 +14,9 @@
 
 @interface DRBShotFeedView : UIView <UITableViewDelegate, UITableViewDataSource>
 
-@property (assign) id<DRBShotFeedViewDelegate> delegate;
-@property(nonatomic, retain) UITableView *tableView;
-@property(nonatomic, retain) NSArray *shotArray;
+@property (weak) id<DRBShotFeedViewDelegate> delegate;
+@property(nonatomic, strong) UITableView *tableView;
+@property(nonatomic, strong) NSArray *shotArray;
 
 - (void)updateTableViewWithShotArray:(NSArray *)inShotArray;
 

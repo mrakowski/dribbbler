@@ -12,9 +12,9 @@
 
 @interface DRBShotDetailView : UIView
 
-@property(nonatomic, retain) DRBShot *shot;
-@property(nonatomic, retain) UIImageView *shotImageView;
-@property(nonatomic, retain) UIButton *playerButton;
+@property(nonatomic, strong) DRBShot *shot;
+@property(nonatomic, strong) UIImageView *shotImageView;
+@property(nonatomic, strong) UIButton *playerButton;
 
 - (id)initWithFrame:(CGRect)frame shot:(DRBShot *)inShot;
 

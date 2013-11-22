@@ -31,7 +31,6 @@
         _avatarImageView.layer.shadowOpacity = 0.7f;
         _avatarImageView.layer.shadowRadius = 1.0f;
         [self addSubview:_avatarImageView];
-        [_avatarImageView release];
         
         [DRBAPIHandler loadImageWithUrlString:_player.avatarUrlString
                              withSuccessBlock:^(UIImage *inImage)
@@ -54,7 +53,6 @@
         tmpPlayerNameLabel.shadowColor = [UIColor whiteColor];
         tmpPlayerNameLabel.shadowOffset = CGSizeMake(0,1);
         [self addSubview:tmpPlayerNameLabel];
-        [tmpPlayerNameLabel release];
         
         UILabel *tmpPlayerLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(tmpPlayerNameLabel.frame.origin.x, CGRectGetMaxY(tmpPlayerNameLabel.frame), tmpPlayerNameLabel.bounds.size.width, tmpPlayerNameLabel.bounds.size.height)];
         tmpPlayerLocationLabel.backgroundColor = [UIColor clearColor];
@@ -63,7 +61,6 @@
         tmpPlayerLocationLabel.shadowColor = tmpPlayerNameLabel.shadowColor;
         tmpPlayerLocationLabel.shadowOffset = tmpPlayerNameLabel.shadowOffset;
         [self addSubview:tmpPlayerLocationLabel];
-        [tmpPlayerLocationLabel release];
     }
     return self;
 }

@@ -16,16 +16,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-        
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    // Set the root view controller to be a navigation controller with an instance of main feed view controller as the root view controller
     DRBMainFeedViewController *tmpViewController  = [[DRBMainFeedViewController alloc] init];
     UINavigationController *tmpNavigationController = [[UINavigationController alloc] initWithRootViewController:tmpViewController];
-    tmpNavigationController.navigationBar.tintColor = [UIColor navigationBarColor];
+    [tmpNavigationController.navigationBar setTintColor:[UIColor navigationBarColor]];
     [self.window setRootViewController:tmpNavigationController];
-    [tmpViewController release];
-    [tmpNavigationController release];
     
-    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -60,10 +59,5 @@
 
 #pragma mark - Memory
 
-- (void)dealloc
-{
-    [_window release];
-    [super dealloc];
-}
 
 @end

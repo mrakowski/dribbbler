@@ -12,6 +12,6 @@
 
 @interface DRBMainFeedViewController : UIViewController <DRBShotFeedViewDelegate>
 
-@property(nonatomic, retain) DRBShotFeedView *shotFeedView;
+@property(nonatomic, strong) DRBShotFeedView *shotFeedView;
 
 @end

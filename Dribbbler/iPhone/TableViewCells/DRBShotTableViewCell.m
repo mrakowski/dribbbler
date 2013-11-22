@@ -33,7 +33,6 @@ CGFloat const DRBShotTableViewCellBottomBorderHeight = 2.0f;
         _shotImageView.clipsToBounds = YES;
         _shotImageView.userInteractionEnabled = YES;
         [self.contentView addSubview:_shotImageView];
-        [_shotImageView release];
     }
     return self;
 }

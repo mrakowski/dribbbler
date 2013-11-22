@@ -17,7 +17,7 @@
     DRBShotDetailView *_shotDetailView;
 }
 
-@property(nonatomic, retain) DRBShot *shot;
+@property(nonatomic, strong) DRBShot *shot;
 
 - (id)initWithShot:(DRBShot *)inShot;
 

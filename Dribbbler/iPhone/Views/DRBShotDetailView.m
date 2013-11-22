@@ -30,26 +30,25 @@
         _shotImageView.userInteractionEnabled = YES;
         [_shotImageView loadImageWithUrl:[NSURL URLWithString:_shot.imageUrlString] andOperationQueue:[DRBAPIHandler sharedInstance].operationQueue andUseCache:[DRBCacheHandler sharedCache]];
         [self addSubview:_shotImageView];
-        [_shotImageView release];
         
         CGFloat tmpVerticalMarginFloat = 10.0f;
         
         // View count label
-        UILabel *tmpViewsLabel = [[[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(_shotImageView.frame) + tmpVerticalMarginFloat, 200, 20)] autorelease];
+        UILabel *tmpViewsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(_shotImageView.frame) + tmpVerticalMarginFloat, 200, 20)];
         tmpViewsLabel.text = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"DRBLocalizableStringsViews", @"DRBLocalizableStringsViews"), _shot.viewsCountString];
         [self addSubview:tmpViewsLabel];
         
         // Likes count label
-        UILabel *tmpLikesLabel = [[[UILabel alloc] initWithFrame:CGRectMake(tmpViewsLabel.frame.origin.x, CGRectGetMaxY(tmpViewsLabel.frame), 300, tmpViewsLabel.frame.size.height)] autorelease];
+        UILabel *tmpLikesLabel = [[UILabel alloc] initWithFrame:CGRectMake(tmpViewsLabel.frame.origin.x, CGRectGetMaxY(tmpViewsLabel.frame), 300, tmpViewsLabel.frame.size.height)];
         tmpLikesLabel.text = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"DRBLocalizableStringsLikes", @"DRBLocalizableStringsLikes"), _shot.likesCountString];
         [self addSubview:tmpLikesLabel];
 
         // Comments count label
-        UILabel *tmpCommentsLabel = [[[UILabel alloc] initWithFrame:CGRectMake(tmpViewsLabel.frame.origin.x, CGRectGetMaxY(tmpLikesLabel.frame), 300, tmpViewsLabel.frame.size.height)] autorelease];
+        UILabel *tmpCommentsLabel = [[UILabel alloc] initWithFrame:CGRectMake(tmpViewsLabel.frame.origin.x, CGRectGetMaxY(tmpLikesLabel.frame), 300, tmpViewsLabel.frame.size.height)];
         tmpCommentsLabel.text = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"DRBLocalizableStringsComments", @"DRBLocalizableStringsComments"), _shot.commentsCountString];
         [self addSubview:tmpCommentsLabel];
         
-        UILabel *tmpArtistLabel = [[[UILabel alloc] initWithFrame:CGRectMake(tmpViewsLabel.frame.origin.x, CGRectGetMaxY(tmpCommentsLabel.frame), 60, tmpViewsLabel.frame.size.height)] autorelease];
+        UILabel *tmpArtistLabel = [[UILabel alloc] initWithFrame:CGRectMake(tmpViewsLabel.frame.origin.x, CGRectGetMaxY(tmpCommentsLabel.frame), 60, tmpViewsLabel.frame.size.height)];
         tmpArtistLabel.text = @"Player:";
         [self addSubview:tmpArtistLabel];
         

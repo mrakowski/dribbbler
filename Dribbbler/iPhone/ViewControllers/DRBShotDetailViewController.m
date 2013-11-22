@@ -37,7 +37,6 @@
     _shotDetailView = [[DRBShotDetailView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) shot:_shot];
     [_shotDetailView.playerButton addTarget:self action:@selector(tappedPlayerNameButton) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_shotDetailView];
-    [_shotDetailView release];
 }
 
 #pragma mark - Control actions
@@ -46,17 +45,10 @@
 {
     DRBPlayerDetailViewController *tmpPlayerDetailViewController = [[DRBPlayerDetailViewController alloc] initWithPlayer:_shot.player];
     [self.navigationController pushViewController:tmpPlayerDetailViewController animated:YES];
-    [tmpPlayerDetailViewController release];
 }
 
 #pragma mark - Memory
 
-- (void)dealloc
-{
-    self.shot = nil;
-    
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {

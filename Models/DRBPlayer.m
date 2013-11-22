@@ -66,12 +66,5 @@
 
 #pragma mark - Memory
 
-- (void)dealloc
-{
-    self.nameString = nil;
-    self.userNameString = nil;
-    
-    [super dealloc];
-}
 
 @end

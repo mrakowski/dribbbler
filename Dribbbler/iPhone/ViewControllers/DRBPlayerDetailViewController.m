@@ -44,13 +44,11 @@
     _shotFeedView.delegate = self;
     _shotFeedView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin;
     [self.view addSubview:_shotFeedView];
-    [_shotFeedView release];
     
     // Player info view
     _playerInfoView = [[DRBPlayerDetailView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, DRBPlayerInfoViewHeightFloat)
                                                           player:_player];
     _shotFeedView.tableView.tableHeaderView = _playerInfoView;
-    [_playerInfoView release];
     
     [DRBAPIHandler getShotsForPlayer:_player
                     withSuccessBlock:^(NSArray *inShotArray)
@@ -71,17 +69,10 @@
 {
     DRBShotDetailViewController *tmpShotDetailViewController = [[DRBShotDetailViewController alloc] initWithShot:inShot];
     [self.navigationController pushViewController:tmpShotDetailViewController animated:YES];
-    [tmpShotDetailViewController release];
 }
 
 #pragma mark - Memory
 
-- (void)dealloc
-{
-    self.player = nil;
-    
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {

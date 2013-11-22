@@ -37,7 +37,6 @@ static NSString *const DRBAPIHandlerMainFeedUrlString = @"http://api.dribbble.co
         if (instance)
         {
             instance.operationQueue = nil;
-            [instance release];
             instance = nil;
         }
     }
@@ -123,9 +122,5 @@ static NSString *const DRBAPIHandlerMainFeedUrlString = @"http://api.dribbble.co
 
 #pragma mark - Memory
 
-- (void)dealloc
-{
-	[super dealloc];
-}
 
 @end

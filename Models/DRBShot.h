@@ -12,14 +12,14 @@
 
 @interface DRBShot : NSObject
 
-@property(nonatomic, retain) NSString *idString;
-@property(nonatomic, retain) NSString *titleString;
-@property(nonatomic, retain) NSString *teaserImageUrlString;
-@property(nonatomic, retain) NSString *imageUrlString;
-@property(nonatomic, retain) DRBPlayer *player;
-@property(nonatomic, retain) NSString *viewsCountString;
-@property(nonatomic, retain) NSString *likesCountString;
-@property(nonatomic, retain) NSString *commentsCountString;
+@property(nonatomic, strong) NSString *idString;
+@property(nonatomic, strong) NSString *titleString;
+@property(nonatomic, strong) NSString *teaserImageUrlString;
+@property(nonatomic, strong) NSString *imageUrlString;
+@property(nonatomic, strong) DRBPlayer *player;
+@property(nonatomic, strong) NSString *viewsCountString;
+@property(nonatomic, strong) NSString *likesCountString;
+@property(nonatomic, strong) NSString *commentsCountString;
 
 + (DRBShot *)shotFromJSONDictionary:(NSDictionary *)inJSONDictionary;
 + (NSArray *)shotArrayFromJSONArray:(NSArray *)inJSONArray;

@@ -14,7 +14,7 @@
 
 + (DRBShot *)shotFromJSONDictionary:(NSDictionary *)inJSONDictionary
 {
-	return [[[self alloc] initWithJSONDictionary:inJSONDictionary] autorelease];
+	return [[self alloc] initWithJSONDictionary:inJSONDictionary];
 }
 
 + (NSArray *)shotArrayFromJSONArray:(NSArray *)inJSONArray
@@ -27,7 +27,6 @@
     }
     
     NSArray *tmpArray = [NSArray arrayWithArray:tmpMutableArray];
-    [tmpMutableArray release];
     
     return tmpArray;
 }
@@ -89,15 +88,5 @@
 
 #pragma mark - Memory
 
-- (void)dealloc
-{
-    self.idString = nil;
-    self.titleString = nil;
-    self.teaserImageUrlString = nil;
-    self.imageUrlString = nil;
-    self.player = nil;
-    
-    [super dealloc];
-}
 
 @end

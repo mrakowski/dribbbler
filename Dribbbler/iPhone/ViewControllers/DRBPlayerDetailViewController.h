@@ -17,7 +17,7 @@
     DRBShotFeedView *_shotFeedView;
 }
 
-@property(nonatomic, retain) DRBPlayer *player;
+@property(nonatomic, strong) DRBPlayer *player;
 
 - (id)initWithPlayer:(DRBPlayer *)inPlayer;
 

@@ -13,7 +13,7 @@
 
 @interface DRBAPIHandler : NSObject
 
-@property(nonatomic, retain) NSOperationQueue *operationQueue;
+@property(nonatomic, strong) NSOperationQueue *operationQueue;
 
 + (DRBAPIHandler *)sharedInstance;
 + (void)destroyInstance;

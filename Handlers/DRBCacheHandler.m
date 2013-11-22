@@ -29,7 +29,6 @@ static NSCache *sharedCache;
 {
 	@synchronized (self)
 	{
-		[sharedCache release];
 		sharedCache = nil;
 	}
 }
