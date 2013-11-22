@@ -21,16 +21,18 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 140.0f;
     self = [super initWithFrame:frame];
     if (self)
     {
-        self.shotArray = @[];
+        // Set the initial shot array to an empty array
+        [self setShotArray:@[]];
         
+        // Table view
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height) style:UITableViewStylePlain];
         [_tableView setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin];
         [_tableView setRowHeight:DRBShotFeedViewTableRowHeightFloat];
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
         [_tableView setDataSource:self];
         [_tableView setDelegate:self];
-        _tableView.separatorColor = [UIColor clearColor];
-        _tableView.backgroundColor = [UIColor feedTableViewBackgroundColor];
+        [_tableView setSeparatorColor:[UIColor clearColor]];
+        [_tableView setBackgroundColor:[UIColor feedTableViewBackgroundColor]];
         [self addSubview:_tableView];
         [_tableView release];
     }
@@ -41,7 +43,7 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 140.0f;
 
 - (void)updateTableViewWithShotArray:(NSArray *)inShotArray
 {
-    self.shotArray = inShotArray;
+    [self setShotArray:inShotArray];
     
     [_tableView reloadData];
 }
@@ -92,6 +94,7 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 140.0f;
 	
     DRBShot *tmpShot = [_shotArray objectAtIndex:indexPath.row];
     
+    // Tell the delegate that a shot was selected
     if ([self.delegate respondsToSelector:@selector(shotFeedViewReceivedSelectionForShot:)])
         [self.delegate shotFeedViewReceivedSelectionForShot:tmpShot];
 }
@@ -100,7 +103,7 @@ static CGFloat const DRBShotFeedViewTableRowHeightFloat = 140.0f;
 
 - (void)dealloc
 {
-    self.shotArray = nil;
+    [self setShotArray:nil];
     
     [super dealloc];
 }
