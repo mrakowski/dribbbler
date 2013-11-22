@@ -22,12 +22,17 @@
 {
     [super viewDidLoad];
     
-    self.title = NSLocalizedString(@"DRBLocalizableStringsEveryone", @"DRBLocalizableStringsEveryone");
+    [self setTitle:NSLocalizedString(@"DRBLocalizableStringsEveryone", @"DRBLocalizableStringsEveryone")];
 	
-    _shotFeedView = [[DRBShotFeedView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height)];
-    _shotFeedView.delegate = self;
+    // Shot feed view
+    _shotFeedView = [[DRBShotFeedView alloc] initWithFrame:CGRectMake(0,
+                                                                      0,
+                                                                      self.view.bounds.size.width,
+                                                                      self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height)];
+    [_shotFeedView setDelegate:self];
     [self.view addSubview:_shotFeedView];
     
+    // Get feed data
     [DRBAPIHandler getMainFeedwithSuccessBlock:^(NSArray *inResponseArray)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -57,14 +62,5 @@
     DRBShotDetailViewController *tmpShotDetailViewController = [[DRBShotDetailViewController alloc] initWithShot:inShot];
     [self.navigationController pushViewController:tmpShotDetailViewController animated:YES];
 }
-
-#pragma mark - Memory
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end
