@@ -16,6 +16,12 @@
 @property(nonatomic, strong) UIImageView *shotImageView;
 @property(nonatomic, strong) UIButton *playerButton;
 
+/**
+ *  Initialize with frame
+ *  @param frame  The frame used for initialization
+ *  @param inShot An object of type DRBShot used to initialize the view
+ *  @return A DRBShotDetailView object
+ */
 - (id)initWithFrame:(CGRect)frame shot:(DRBShot *)inShot;
 
 @end
