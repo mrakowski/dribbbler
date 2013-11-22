@@ -25,10 +25,7 @@
     [self setTitle:NSLocalizedString(@"DRBLocalizableStringsEveryone", @"DRBLocalizableStringsEveryone")];
 	
     // Shot feed view
-    _shotFeedView = [[DRBShotFeedView alloc] initWithFrame:CGRectMake(0,
-                                                                      0,
-                                                                      self.view.bounds.size.width,
-                                                                      self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height)];
+    _shotFeedView = [[DRBShotFeedView alloc] initWithFrame:self.view.bounds];
     [_shotFeedView setDelegate:self];
     [self.view addSubview:_shotFeedView];
     
