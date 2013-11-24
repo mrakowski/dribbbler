@@ -32,6 +32,7 @@
         [_shotImageView loadImageWithUrl:[NSURL URLWithString:_shot.imageUrlString] andOperationQueue:[DRBAPIHandler sharedInstance].operationQueue andUseCache:[DRBCacheHandler sharedCache]];
         [self addSubview:_shotImageView];
         
+		// Margins
 		CGFloat tmpHorizontalMarginFloat = 10.0f;
         CGFloat tmpVerticalMarginFloat = 10.0f;
         
