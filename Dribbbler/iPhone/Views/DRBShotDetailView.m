@@ -41,9 +41,9 @@
 																			  self.bounds.size.width - tmpHorizontalMarginFloat*2,
 																			  20.0f)];
         [tmpShotInfoLabel setText:[NSString stringWithFormat:@"%@ %@, %@ %@, %@ %@",
-								   _shot.viewsCountString, @"Views",
-								   _shot.likesCountString, @"Likes",
-								   _shot.commentsCountString, @"Comments"]];
+								   _shot.viewsCountString, ([_shot.viewsCountString isEqualToString:@"1"] ? @"View" : @"Views"),
+								   _shot.likesCountString, ([_shot.likesCountString isEqualToString:@"1"] ? @"Like" : @"Likes"),
+								   _shot.commentsCountString, ([_shot.commentsCountString isEqualToString:@"1"] ? @"Comment" : @"Comments")]];
         [self addSubview:tmpShotInfoLabel];
         
         // Player label
