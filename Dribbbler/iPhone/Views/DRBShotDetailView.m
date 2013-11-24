@@ -21,15 +21,13 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        [self setShot:inShot];
-        
         // Shot image view
         _shotImageView = [[UIImageView alloc] init];
         [_shotImageView setFrame:CGRectMake(0.0f, 0.0f, self.bounds.size.width, 240.0f)];
         [_shotImageView setContentMode: UIViewContentModeScaleAspectFill];
         [_shotImageView setClipsToBounds:YES];
         [_shotImageView setUserInteractionEnabled:YES];
-        [_shotImageView loadImageWithUrl:[NSURL URLWithString:_shot.imageUrlString] andOperationQueue:[DRBAPIHandler sharedInstance].operationQueue andUseCache:[DRBCacheHandler sharedCache]];
+        [_shotImageView loadImageWithUrl:[NSURL URLWithString:inShot.imageUrlString] andOperationQueue:[DRBAPIHandler sharedInstance].operationQueue andUseCache:[DRBCacheHandler sharedCache]];
         [self addSubview:_shotImageView];
         
 		// Margins
@@ -42,9 +40,9 @@
 																			  self.bounds.size.width - tmpHorizontalMarginFloat*2,
 																			  20.0f)];
         [tmpShotInfoLabel setText:[NSString stringWithFormat:@"%@ %@, %@ %@, %@ %@",
-								   _shot.viewsCountString, ([_shot.viewsCountString isEqualToString:@"1"] ? @"View" : @"Views"),
-								   _shot.likesCountString, ([_shot.likesCountString isEqualToString:@"1"] ? @"Like" : @"Likes"),
-								   _shot.commentsCountString, ([_shot.commentsCountString isEqualToString:@"1"] ? @"Comment" : @"Comments")]];
+								   inShot.viewsCountString, ([inShot.viewsCountString isEqualToString:@"1"] ? @"View" : @"Views"),
+								   inShot.likesCountString, ([inShot.likesCountString isEqualToString:@"1"] ? @"Like" : @"Likes"),
+								   inShot.commentsCountString, ([inShot.commentsCountString isEqualToString:@"1"] ? @"Comment" : @"Comments")]];
         [self addSubview:tmpShotInfoLabel];
         
         // Player label
@@ -61,7 +59,7 @@
 										   tmpPlayerLabel.frame.origin.y,
 										   self.bounds.size.width - CGRectGetMaxX(tmpPlayerLabel.frame),
 										   tmpPlayerLabel.frame.size.height + 2.0f)];
-        [_playerButton setTitle:_shot.player.nameString forState:UIControlStateNormal];
+        [_playerButton setTitle:inShot.player.nameString forState:UIControlStateNormal];
         [_playerButton.titleLabel setFont:tmpPlayerLabel.font];
         [_playerButton setTitleColor:[UIColor playerButtonColor] forState:UIControlStateNormal];
         [_playerButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];

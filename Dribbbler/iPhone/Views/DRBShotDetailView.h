@@ -12,7 +12,6 @@
 
 @interface DRBShotDetailView : UIView
 
-@property(nonatomic, strong) DRBShot *shot;
 @property(nonatomic, strong) UIImageView *shotImageView;
 @property(nonatomic, strong) UIButton *playerButton;
 
