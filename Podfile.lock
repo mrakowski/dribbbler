@@ -17,11 +17,14 @@ PODS:
   - AFNetworking/Serialization (2.0.3)
   - AFNetworking/UIKit (2.0.3):
     - AFNetworking/NSURLConnection
+  - APAvatarImageView (1.0.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - APAvatarImageView
 
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
+  APAvatarImageView: 1f235b06303cb4f590787972c964c371e45379f5
 
 COCOAPODS: 0.28.0

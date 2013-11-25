@@ -51,7 +51,7 @@
                                                                             self.view.bounds.size.width,
                                                                             DRBPlayerInfoViewHeightFloat)
                                                           player:_player];
-    _shotFeedView.tableView.tableHeaderView = _playerInfoView;
+    [_shotFeedView.tableView setTableHeaderView:_playerInfoView];
     
     // Get shots data for player
     [DRBAPIHandler getShotsForPlayer:_player
