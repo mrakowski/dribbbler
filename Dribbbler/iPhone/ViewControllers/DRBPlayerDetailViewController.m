@@ -37,17 +37,17 @@
     [super viewDidLoad];
     
     // Shot feed view
-    _shotFeedView = [[DRBShotFeedView alloc] initWithFrame:CGRectMake(0,
+    _shotFeedView = [[DRBShotFeedView alloc] initWithFrame:CGRectMake(0.0f,
                                                                       CGRectGetMaxY(_playerInfoView.frame),
                                                                       self.view.bounds.size.width,
-                                                                      self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height - CGRectGetMaxY(_playerInfoView.frame))];
+                                                                      self.view.bounds.size.height - CGRectGetMaxY(_playerInfoView.frame))];
     [_shotFeedView setDelegate:self];
     [_shotFeedView setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin];
     [self.view addSubview:_shotFeedView];
     
     // Player info view
-    _playerInfoView = [[DRBPlayerDetailView alloc] initWithFrame:CGRectMake(0,
-                                                                            0,
+    _playerInfoView = [[DRBPlayerDetailView alloc] initWithFrame:CGRectMake(0.0f,
+                                                                            0.0f,
                                                                             self.view.bounds.size.width,
                                                                             DRBPlayerInfoViewHeightFloat)
                                                           player:_player];
