@@ -37,7 +37,11 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
     // Shot detail view
-    _shotDetailView = [[DRBShotDetailView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) shot:_shot];
+    _shotDetailView = [[DRBShotDetailView alloc] initWithFrame:CGRectMake(0.0f,
+																		  self.navigationController.navigationBar.bounds.size.height,
+																		  self.view.bounds.size.width,
+																		  self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height)
+														  shot:_shot];
     [_shotDetailView.playerButton addTarget:self action:@selector(tappedPlayerNameButton) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_shotDetailView];
 }
