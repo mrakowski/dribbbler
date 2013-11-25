@@ -11,6 +11,16 @@
 #import "DRBAPIHandler.h"
 
 #import <QuartzCore/QuartzCore.h>
+#import <APAvatarImageView/APAvatarImageView.h>
+
+@interface DRBPlayerDetailView()
+{
+	APAvatarImageView *_avatarImageView;
+}
+
+@property(nonatomic, strong) DRBPlayer *player;
+
+@end
 
 @implementation DRBPlayerDetailView
 
@@ -22,24 +32,19 @@
         [self setPlayer:inPlayer];
         
         // Avatar image view
-        _avatarImageView = [[UIImageView alloc] init];
-        [_avatarImageView setFrame:CGRectMake(10.0f, 10.0f, 90.0f, 90.0f)];
-        [_avatarImageView setContentMode: UIViewContentModeScaleAspectFill];
-        [_avatarImageView setClipsToBounds:NO];
-        [_avatarImageView setUserInteractionEnabled:YES];
-        [_avatarImageView.layer setShadowColor:[UIColor blackColor].CGColor];
-        [_avatarImageView.layer setShadowOffset:CGSizeMake(0, 1)];
-        [_avatarImageView.layer setShadowOpacity:0.7f];
-        [_avatarImageView.layer setShadowRadius:1.0f];
-        [self addSubview:_avatarImageView];
-        
+		_avatarImageView = [[APAvatarImageView alloc] initWithFrame:CGRectMake(10.0f, 10.0f, 90.0f, 90.0f)
+														borderColor:[UIColor blackColor]
+														borderWidth:1.0f];
+		[_avatarImageView setBorderWidth:2.0];
+		[self addSubview:_avatarImageView];
+		
         // Load avatar image
         [DRBAPIHandler loadImageWithUrlString:_player.avatarUrlString
                              withSuccessBlock:^(UIImage *inImage)
         {
             dispatch_async(dispatch_get_main_queue(), ^
-            {    
-                [_avatarImageView setImage:inImage];
+            {
+				[_avatarImageView setImage:inImage];
             });
         }
                               andFailureBlock:^(NSArray *inResponseArray)
@@ -47,23 +52,18 @@
         
         CGFloat tmpHorizontalPadding = 10.0f;
         
-        // Player name label
-        UILabel *tmpPlayerNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_avatarImageView.frame) + tmpHorizontalPadding, _avatarImageView.frame.origin.y, 200, 22)];
-        [tmpPlayerNameLabel setBackgroundColor:[UIColor clearColor]];
-        [tmpPlayerNameLabel setFont:[UIFont boldSystemFontOfSize:16]];
-        [tmpPlayerNameLabel setText:inPlayer.nameString];
-        [tmpPlayerNameLabel setShadowColor:[UIColor whiteColor]];
-        [tmpPlayerNameLabel setShadowOffset:CGSizeMake(0,1)];
-        [self addSubview:tmpPlayerNameLabel];
-        
-        // Player location label
-        UILabel *tmpPlayerLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(tmpPlayerNameLabel.frame.origin.x, CGRectGetMaxY(tmpPlayerNameLabel.frame), tmpPlayerNameLabel.bounds.size.width, tmpPlayerNameLabel.bounds.size.height)];
-        [tmpPlayerLocationLabel setBackgroundColor:[UIColor clearColor]];
-        [tmpPlayerLocationLabel setFont:tmpPlayerNameLabel.font];
-        [tmpPlayerLocationLabel setText:inPlayer.locationString];
-        [tmpPlayerLocationLabel setShadowColor:tmpPlayerNameLabel.shadowColor];
-        [tmpPlayerLocationLabel setShadowOffset:tmpPlayerNameLabel.shadowOffset];
-        [self addSubview:tmpPlayerLocationLabel];
+        // Player info label
+        UILabel *tmpPlayerInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_avatarImageView.frame) + tmpHorizontalPadding,
+																				_avatarImageView.frame.origin.y,
+																				200,
+																				_avatarImageView.bounds.size.height)];
+		[tmpPlayerInfoLabel setNumberOfLines:0];
+        [tmpPlayerInfoLabel setBackgroundColor:[UIColor clearColor]];
+        [tmpPlayerInfoLabel setFont:[UIFont systemFontOfSize:16]];
+		[tmpPlayerInfoLabel setText:[NSString stringWithFormat:@"%@\n%@", inPlayer.nameString, inPlayer.locationString]];
+		[tmpPlayerInfoLabel setShadowColor:[UIColor whiteColor]];
+        [tmpPlayerInfoLabel setShadowOffset:CGSizeMake(0,1)];
+        [self addSubview:tmpPlayerInfoLabel];
     }
     return self;
 }
