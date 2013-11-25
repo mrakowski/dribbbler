@@ -50,7 +50,7 @@
         // Player name label
         UILabel *tmpPlayerNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_avatarImageView.frame) + tmpHorizontalPadding, _avatarImageView.frame.origin.y, 200, 22)];
         [tmpPlayerNameLabel setBackgroundColor:[UIColor clearColor]];
-        [tmpPlayerNameLabel setFont:[UIFont boldSystemFontOfSize:17]];
+        [tmpPlayerNameLabel setFont:[UIFont boldSystemFontOfSize:16]];
         [tmpPlayerNameLabel setText:inPlayer.nameString];
         [tmpPlayerNameLabel setShadowColor:[UIColor whiteColor]];
         [tmpPlayerNameLabel setShadowOffset:CGSizeMake(0,1)];
