@@ -1,30 +1,30 @@
 PODS:
-  - AFNetworking (2.0.3):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
+  - AFNetworking (2.1.0):
+    - AFNetworking/NSURLConnection (= 2.1.0)
+    - AFNetworking/NSURLSession (= 2.1.0)
+    - AFNetworking/Reachability (= 2.1.0)
+    - AFNetworking/Security (= 2.1.0)
+    - AFNetworking/Serialization (= 2.1.0)
+    - AFNetworking/UIKit (= 2.1.0)
+  - AFNetworking/NSURLConnection (2.1.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-    - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.0.3):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.0.3):
+  - AFNetworking/NSURLSession (2.1.0):
     - AFNetworking/NSURLConnection
-  - AFNetworking/Reachability (2.0.3)
-  - AFNetworking/Security (2.0.3)
-  - AFNetworking/Serialization (2.0.3)
-  - AFNetworking/UIKit (2.0.3):
+  - AFNetworking/Reachability (2.1.0)
+  - AFNetworking/Security (2.1.0)
+  - AFNetworking/Serialization (2.1.0)
+  - AFNetworking/UIKit (2.1.0):
     - AFNetworking/NSURLConnection
   - APAvatarImageView (1.0.0)
 
 DEPENDENCIES:
-  - AFNetworking
+  - AFNetworking (~> 2.1.0)
   - APAvatarImageView
 
 SPEC CHECKSUMS:
-  AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
-  APAvatarImageView: 1f235b06303cb4f590787972c964c371e45379f5
+  AFNetworking: d397c9a76a60c670cbcd33f3ff2c5f961f724cbc
+  APAvatarImageView: 2a30342f43c012ab166aa7862261e6fbcc74c9cf
 
-COCOAPODS: 0.28.0
+COCOAPODS: 0.39.0
